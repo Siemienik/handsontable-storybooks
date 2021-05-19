@@ -170,3 +170,45 @@ SettingUpALocale.args = {
     licenseKey: 'non-commercial-and-evaluation'
   }
 };
+
+export const CustomIdClassStyleWithoutData = Template().bind({});
+CustomIdClassStyleWithoutData.args = {
+  source: 'https://dev.handsontable.com/docs/next/vue-custom-id-class-style/',
+  hotTable: {
+    settings: {
+      startRows: 5,
+      startCols: 5,
+      colHeaders: true,
+      stretchH: 'all',
+      licenseKey: 'non-commercial-and-evaluation',
+      formulas: {
+        engine: HyperFormula
+      },
+    },
+    id: 'my-custom-id',
+    className: 'my-custom-classname',
+    style: 'width: 300px; height: 142px; overflow: hidden; border: 1px solid red;'
+  }
+};
+
+
+export const CustomIdClassStyleWithData = Template().bind({});
+CustomIdClassStyleWithData.args = {
+  source: 'https://dev.handsontable.com/docs/next/vue-custom-id-class-style/',
+  hotTable: {
+    settings: {
+      startRows: 5,
+      startCols: 5,
+      colHeaders: true,
+      stretchH: 'all',
+      licenseKey: 'non-commercial-and-evaluation',
+      formulas: {
+        engine: HyperFormula
+      },
+      data: Handsontable.helper.createSpreadsheetData(10, 10),
+    },
+    id: 'my-custom-id',
+    className: 'my-custom-classname',
+    style: 'width: 300px; height: 142px; overflow: hidden; border: 1px solid red;'
+  }
+};

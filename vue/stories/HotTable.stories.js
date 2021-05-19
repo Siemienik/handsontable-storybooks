@@ -1,17 +1,15 @@
 import {HotColumn, HotTable} from '@handsontable/vue';
 import Handsontable from "handsontable";
-import {HyperFormula} from "hyperformula";
 
 export default {
-  title: 'HOT/HotTable',
-  component: HotTable,
-
+    title: 'HOT/HotTable',
+    component: HotTable
 };
 
-const Template = (template) => (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { HotTable, HotColumn },
-  template: template || `
+const Template = (template) => (args, {argTypes}) => ({
+    props: Object.keys(argTypes),
+    components: {HotTable, HotColumn},
+    template: template || `
     <div>
       <a v-if="$props.source?.startsWith('http')" :href="$props.source" target="_blank">Source</a>
       <hot-table v-bind="$props.hotTable"></hot-table>
@@ -19,27 +17,26 @@ const Template = (template) => (args, { argTypes }) => ({
   `,
 });
 
-
 export const JustATable = Template().bind({});
 JustATable.args = {
-  hotTable: {
-    settings: {
-      data: Handsontable.helper.createSpreadsheetData(10, 10),
-      licenseKey: 'non-commercial-and-evaluation'
+    hotTable: {
+        settings: {
+            data: Handsontable.helper.createSpreadsheetData(10, 10),
+            licenseKey: 'non-commercial-and-evaluation'
+        }
     }
-  }
 };
 
 export const CollHeaders = Template().bind({});
 CollHeaders.args = {
-  hotTable: {
-    settings: {
-      data: Handsontable.helper.createSpreadsheetData(6, 10),
-      colHeaders: true,
-      licenseKey: 'non-commercial-and-evaluation'
+    hotTable: {
+        settings: {
+            data: Handsontable.helper.createSpreadsheetData(6, 10),
+            colHeaders: true,
+            licenseKey: 'non-commercial-and-evaluation'
+        },
     },
-  },
-  source: 'https://dev.handsontable.com/docs/next/vue-simple-example/'
+    source: 'https://dev.handsontable.com/docs/next/vue-simple-example/'
 };
 
 export const ColumnDeclaringSettings = Template(`
@@ -54,17 +51,17 @@ export const ColumnDeclaringSettings = Template(`
 </div>
 `).bind({});
 ColumnDeclaringSettings.args = {
-  hotTable: {
-    settings: {
-      data: Handsontable.helper.createSpreadsheetData(10, 10),
-      licenseKey: 'non-commercial-and-evaluation'
+    hotTable: {
+        settings: {
+            data: Handsontable.helper.createSpreadsheetData(10, 10),
+            licenseKey: 'non-commercial-and-evaluation'
+        },
     },
-  },
-  secondColumn: {
-    settings: {
-      title: 'Second column header',
-    }
-  },
+    secondColumn: {
+        settings: {
+            title: 'Second column header',
+        }
+    },
 };
 
 export const ColumnArrayOfObjects = Template(`
@@ -83,21 +80,21 @@ export const ColumnArrayOfObjects = Template(`
 </div>
 `).bind({});
 ColumnArrayOfObjects.args = {
-  hotTable: {
-    data: [
-      {id: 1, name: 'Table tennis racket', payment: {price: 13, currency: 'PLN'}},
-      {id: 2, name: 'Outdoor game ball', payment: {price: 14, currency: 'USD'}},
-      {id: 3, name: 'Mountain bike', payment: {price: 300, currency: 'USD'}}
-    ],
-    settings: {
-      licenseKey: 'non-commercial-and-evaluation'
+    hotTable: {
+        data: [
+            {id: 1, name: 'Table tennis racket', payment: {price: 13, currency: 'PLN'}},
+            {id: 2, name: 'Outdoor game ball', payment: {price: 14, currency: 'USD'}},
+            {id: 3, name: 'Mountain bike', payment: {price: 300, currency: 'USD'}}
+        ],
+        settings: {
+            licenseKey: 'non-commercial-and-evaluation'
+        },
     },
-  },
-  secondColumn: {
-    settings: {
-      title: 'Second column header'
-    },
-  }
+    secondColumn: {
+        settings: {
+            title: 'Second column header'
+        },
+    }
 };
 
 export const SettingUpALocale = Template(`
@@ -128,36 +125,52 @@ export const SettingUpALocale = Template(`
 </div>
 `).bind({});
 SettingUpALocale.args = {
-  formatJP: {
-    pattern: '0,0.00 $',
-    culture: 'ja-JP',
-  },
-  formatTR: {
-    pattern: '0,0.00 $',
-    culture: 'tr-TR',
-  },
-  data: [
-    {
-      productName: 'Product A',
-      JP_price: "=1+2+3",
-      TR_price: 100.56,
+    formatJP: {
+        pattern: '0,0.00 $',
+        culture: 'ja-JP',
     },
-    {
-      productName: 'Product B',
-      JP_price: 2.22,
-      TR_price: 453.5,
+    formatTR: {
+        pattern: '0,0.00 $',
+        culture: 'tr-TR',
     },
-    {
-      productName: 'Product C',
-      JP_price: 3.1,
-      TR_price: 678.1,
-    },
-  ],
-  settings: {
-    licenseKey: 'non-commercial-and-evaluation'
-  }
+    data: [
+        {
+            productName: 'Product A',
+            JP_price: "=1+2+3",
+            TR_price: 100.56,
+        },
+        {
+            productName: 'Product B',
+            JP_price: 2.22,
+            TR_price: 453.5,
+        },
+        {
+            productName: 'Product C',
+            JP_price: 3.1,
+            TR_price: 678.1,
+        },
+    ],
+    settings: {
+        licenseKey: 'non-commercial-and-evaluation'
+    }
 };
 
+export const CustomIdClassStyle = Template().bind({});
+CustomIdClassStyle.args = {
+    source: 'https://dev.handsontable.com/docs/next/vue-custom-id-class-style/',
+    hotTable: {
+    settings: {
+      startRows: 5,
+      startCols: 5,
+      colHeaders: true,
+      stretchH: 'all',
+      licenseKey: 'non-commercial-and-evaluation'
+    },
+    id: 'my-custom-id',
+    className: 'my-custom-classname',
+    style: 'width: 300px; height: 142px; overflow: hidden; border: 1px solid red;'
+  }
+};
 
 
 /* todo:
