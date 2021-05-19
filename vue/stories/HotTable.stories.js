@@ -172,6 +172,31 @@ CustomIdClassStyle.args = {
   }
 };
 
+export const CustomContextMenu = Template().bind({});
+CustomContextMenu.args = {
+  source: 'https://dev.handsontable.com/docs/next/vue-custom-context-menu-example/',
+  hotTable: {
+    data: Handsontable.helper.createSpreadsheetData(5, 5),
+    colHeaders: true,
+    contextMenu: {
+      items: {
+        'row_above': {
+          name: 'Insert row above this one (custom name)'
+        },
+        'row_below': {},
+        'separator': Handsontable.plugins.ContextMenu.SEPARATOR,
+        'clear_custom': {
+          name: 'Clear all cells (custom)',
+          callback() {
+            this.clear();
+          }
+        }
+      }
+    },
+    licenseKey: 'non-commercial-and-evaluation'
+  }
+};
+
 
 /* todo:
 * * https://dev.handsontable.com/docs/next/vue-hot-column/#declaring-a-custom-renderer-as-a-component

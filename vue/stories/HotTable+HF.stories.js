@@ -191,7 +191,6 @@ CustomIdClassStyleWithoutData.args = {
   }
 };
 
-
 export const CustomIdClassStyleWithData = Template().bind({});
 CustomIdClassStyleWithData.args = {
   source: 'https://dev.handsontable.com/docs/next/vue-custom-id-class-style/',
@@ -210,5 +209,33 @@ CustomIdClassStyleWithData.args = {
     id: 'my-custom-id',
     className: 'my-custom-classname',
     style: 'width: 300px; height: 142px; overflow: hidden; border: 1px solid red;'
+  }
+};
+
+export const CustomContextMenu = Template().bind({});
+CustomContextMenu.args = {
+  source: 'https://dev.handsontable.com/docs/next/vue-custom-context-menu-example/',
+  hotTable: {
+    data: Handsontable.helper.createSpreadsheetData(5, 5),
+    colHeaders: true,
+    formulas: {
+      engine: HyperFormula
+    },
+    contextMenu: {
+      items: {
+        'row_above': {
+          name: 'Insert row above this one (custom name)'
+        },
+        'row_below': {},
+        'separator': Handsontable.plugins.ContextMenu.SEPARATOR,
+        'clear_custom': {
+          name: 'Clear all cells (custom)',
+          callback() {
+            this.clear();
+          }
+        }
+      }
+    },
+    licenseKey: 'non-commercial-and-evaluation'
   }
 };
