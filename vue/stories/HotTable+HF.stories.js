@@ -1,6 +1,7 @@
 import { HotTable, HotColumn } from '@handsontable/vue';
 import Handsontable from "handsontable";
 import {HyperFormula} from "hyperformula";
+import CustomEditor from "../src/CustomEditor";
 
 export default {
   title: 'HOT+HF/HotTable',
@@ -237,5 +238,25 @@ CustomContextMenu.args = {
       }
     },
     licenseKey: 'non-commercial-and-evaluation'
+  }
+};
+
+export const CustomEditorAsAClass = Template().bind({});
+CustomEditorAsAClass.args = {
+  source: 'https://dev.handsontable.com/docs/next/vue-custom-editor-example/#declaring-an-editor-as-a-class',
+  hotTable: {
+    settings: {
+      formulas: {
+        engine: HyperFormula
+      },
+      data: Handsontable.helper.createSpreadsheetData(5, 1), // todo remove this line after: https://github.com/handsontable/handsontable/issues/8069
+      startRows: 5,
+      columns: [{
+        editor: CustomEditor
+      }],
+      colHeaders: true,
+      colWidths: 200,
+      licenseKey: 'non-commercial-and-evaluation'
+    }
   }
 };

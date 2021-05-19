@@ -1,5 +1,6 @@
 import {HotColumn, HotTable} from '@handsontable/vue';
 import Handsontable from "handsontable";
+import CustomEditor from "../src/CustomEditor";
 
 export default {
     title: 'HOT/HotTable',
@@ -197,10 +198,26 @@ CustomContextMenu.args = {
   }
 };
 
+export const CustomEditorAsAClass = Template().bind({});
+CustomEditorAsAClass.args = {
+  source: 'https://dev.handsontable.com/docs/next/vue-custom-editor-example/#declaring-an-editor-as-a-class',
+  hotTable: {
+    settings: {
+      startRows: 5,
+        columns: [{
+          editor: CustomEditor
+        }],
+        colHeaders: true,
+        colWidths: 200,
+        licenseKey: 'non-commercial-and-evaluation'
+      }
+    }
+};
+
 
 /* todo:
 * * https://dev.handsontable.com/docs/next/vue-hot-column/#declaring-a-custom-renderer-as-a-component
 * * https://dev.handsontable.com/docs/next/vue-hot-column/#declaring-a-custom-editor-as-a-component
 * * https://dev.handsontable.com/docs/next/vue-hot-column/#using-the-renderer-editor-components-with-v-model
 * * maybe: https://dev.handsontable.com/docs/next/vue-hot-column/#a-more-advanced-example
- */
+*/
