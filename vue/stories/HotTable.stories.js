@@ -100,3 +100,69 @@ ColumnArrayOfObjects.args = {
   }
 };
 
+export const SettingUpALocale = Template(`
+<div>
+  <a href="https://dev.handsontable.com/docs/next/vue-setting-up-a-locale/#setting-up-a-locale" target="_blank"> Source</a>
+   <hot-table :data="$props.data" :settings="$props.settings">
+    <hot-column
+      title="Product name"
+      data="productName"
+      width="120"
+      read-only="true"
+    ></hot-column>
+    <hot-column
+      title="Price in Japan"
+      type="numeric"
+      :numeric-format="$props.formatJP"
+      data="JP_price"
+      width="120"
+    ></hot-column>
+    <hot-column
+      title="Price in Turkey"
+      data="TR_price"
+      type="numeric"
+      :numeric-format="$props.formatTR"
+      width="120"
+    ></hot-column>
+  </hot-table>
+</div>
+`).bind({});
+SettingUpALocale.args = {
+  formatJP: {
+    pattern: '0,0.00 $',
+    culture: 'ja-JP',
+  },
+  formatTR: {
+    pattern: '0,0.00 $',
+    culture: 'tr-TR',
+  },
+  data: [
+    {
+      productName: 'Product A',
+      JP_price: "=1+2+3",
+      TR_price: 100.56,
+    },
+    {
+      productName: 'Product B',
+      JP_price: 2.22,
+      TR_price: 453.5,
+    },
+    {
+      productName: 'Product C',
+      JP_price: 3.1,
+      TR_price: 678.1,
+    },
+  ],
+  settings: {
+    licenseKey: 'non-commercial-and-evaluation'
+  }
+};
+
+
+
+/* todo:
+* * https://dev.handsontable.com/docs/next/vue-hot-column/#declaring-a-custom-renderer-as-a-component
+* * https://dev.handsontable.com/docs/next/vue-hot-column/#declaring-a-custom-editor-as-a-component
+* * https://dev.handsontable.com/docs/next/vue-hot-column/#using-the-renderer-editor-components-with-v-model
+* * maybe: https://dev.handsontable.com/docs/next/vue-hot-column/#a-more-advanced-example
+ */

@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "handsontable": "/Users/siemienik/WebstormProjects/handsontable/tmp/handsontable-8.4.0.tgz",
     "hyperformula": "^0.6.0",
+    "numbro": "^2.1.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
