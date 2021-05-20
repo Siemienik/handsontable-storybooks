@@ -49,4 +49,6 @@ npm run start
 * [ ] TODO: Investigate how to call instance methods when using  wrappers.
 * [ ] Maybe: auto screenshots shooter (addon is ready, requires 2 lines of code per storybook)
 * [ ] Maybe: check cypress integration to automate test.
+* [ ] https://storybook.js.org/addons/storycap
+
     
