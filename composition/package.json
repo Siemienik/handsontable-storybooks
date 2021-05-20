@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-storybook -p 6010",
-    "build": "build-storybook"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +19,5 @@
     "@storybook/html": "^6.2.9",
     "babel-loader": "^8.2.2"
   },
-  "dependencies": {
-    "handsontable": "../lib/handsontable-8.4.0.tgz",
-    "numbro": "^2.3.2"
-  }
+  "dependencies": {}
 }

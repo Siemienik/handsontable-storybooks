@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "start": "npm run docs:json && start-storybook -p 6006",
+    "start": "npm run docs:json && start-storybook -p 6008",
     "build": "npm run docs:json && build-storybook"
   },
   "private": true,
