@@ -1,0 +1,104 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "HotTableWrapper",
+            "id": "component-HotTableWrapper-2cf485e9097daffb36ff31bdc5cc4522",
+            "file": "src/stories/HotTableWrapper.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div>\n  <hot-table\n      [data]=\"dataset\"\n      [colHeaders]=\"true\"\n      [rowHeaders]=\"true\"\n      licenseKey=\"non-commercial-and-evaluation\">\n    <hot-column data=\"id\" [readOnly]=\"true\" title=\"ID\"></hot-column>\n    <hot-column data=\"name\" title=\"Full name\"></hot-column>\n    <hot-column data=\"address\" title=\"Street name\"></hot-column>\n  </hot-table>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dataset",
+                    "defaultValue": "[\n        {id: 1, name: 'Ted Right', address: 'Wall Street'},\n        {id: 2, name: 'Frank Honest', address: 'Pennsylvania Avenue'},\n        {id: 3, name: 'Joan Well', address: 'Broadway'},\n        {id: 4, name: 'Gail Polite', address: 'Bourbon Street'},\n        {id: 5, name: 'Michael Fair', address: 'Lombard Street'},\n        {id: 6, name: 'Mia Fair', address: 'Rodeo Drive'},\n        {id: 7, name: 'Cora Fair', address: 'Sunset Boulevard'},\n        {id: 8, name: 'Jack Right', address: 'Michigan Avenue'},\n    ]",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-root',\n    template: `\n    <div>\n      <hot-table\n          [data]=\"dataset\"\n          [colHeaders]=\"true\"\n          [rowHeaders]=\"true\"\n          licenseKey=\"non-commercial-and-evaluation\">\n        <hot-column data=\"id\" [readOnly]=\"true\" title=\"ID\"></hot-column>\n        <hot-column data=\"name\" title=\"Full name\"></hot-column>\n        <hot-column data=\"address\" title=\"Street name\"></hot-column>\n      </hot-table>\n    </div>\n  `,\n})\nexport class HotTableWrapper{\n    dataset: any[] = [\n        {id: 1, name: 'Ted Right', address: 'Wall Street'},\n        {id: 2, name: 'Frank Honest', address: 'Pennsylvania Avenue'},\n        {id: 3, name: 'Joan Well', address: 'Broadway'},\n        {id: 4, name: 'Gail Polite', address: 'Bourbon Street'},\n        {id: 5, name: 'Michael Fair', address: 'Lombard Street'},\n        {id: 6, name: 'Mia Fair', address: 'Rodeo Drive'},\n        {id: 7, name: 'Cora Fair', address: 'Sunset Boulevard'},\n        {id: 8, name: 'Jack Right', address: 'Michigan Avenue'},\n    ];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Hot.stories.ts",
+                "type": "",
+                "defaultValue": "()=>( {props:{\n  // data: [\n  //   {id: 1, name: 'Ted Right', address: 'Wall Street'},\n  //   {id: 2, name: 'Frank Honest', address: 'Pennsylvania Avenue'},\n  //   {id: 3, name: 'Joan Well', address: 'Broadway'},\n  //   {id: 4, name: 'Gail Polite', address: 'Bourbon Street'},\n  //   {id: 5, name: 'Michael Fair', address: 'Lombard Street'},\n  //   {id: 6, name: 'Mia Fair', address: 'Rodeo Drive'},\n  //   {id: 7, name: 'Cora Fair', address: 'Sunset Boulevard'},\n  //   {id: 8, name: 'Jack Right', address: 'Michigan Avenue'},\n  // ],\n  // colHeaders: true,\n  // rowHeaders: true,\n  // licenseKey:\"non-commercial-and-evaluation\"\n}})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/stories/Hot.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Hot.stories.ts",
+                    "type": "",
+                    "defaultValue": "()=>( {props:{\n  // data: [\n  //   {id: 1, name: 'Ted Right', address: 'Wall Street'},\n  //   {id: 2, name: 'Frank Honest', address: 'Pennsylvania Avenue'},\n  //   {id: 3, name: 'Joan Well', address: 'Broadway'},\n  //   {id: 4, name: 'Gail Polite', address: 'Bourbon Street'},\n  //   {id: 5, name: 'Michael Fair', address: 'Lombard Street'},\n  //   {id: 6, name: 'Mia Fair', address: 'Rodeo Drive'},\n  //   {id: 7, name: 'Cora Fair', address: 'Sunset Boulevard'},\n  //   {id: 8, name: 'Jack Right', address: 'Michigan Avenue'},\n  // ],\n  // colHeaders: true,\n  // rowHeaders: true,\n  // licenseKey:\"non-commercial-and-evaluation\"\n}})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/stories/Hot.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/HotTableWrapper.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HotTableWrapper",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}

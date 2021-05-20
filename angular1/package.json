@@ -1,0 +1,40 @@
+{
+  "name": "angular1",
+  "version": "0.0.0",
+  "scripts": {
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "start": "npm run docs:json && start-storybook -p 6006",
+    "build": "npm run docs:json && build-storybook"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~11.1.1",
+    "@angular/common": "~11.1.1",
+    "@angular/compiler": "~11.1.1",
+    "@angular/core": "~11.1.1",
+    "@angular/forms": "~11.1.1",
+    "@angular/platform-browser": "~11.1.1",
+    "@angular/platform-browser-dynamic": "~11.1.1",
+    "@angular/router": "~11.1.1",
+    "@handsontable/angular": "^8.4.0",
+    "handsontable": "^8.4.0",
+    "numbro": "^2.1.2",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.11.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1101.2",
+    "@angular/cli": "~11.1.2",
+    "@angular/compiler-cli": "~11.1.1",
+    "@babel/core": "^7.14.3",
+    "@compodoc/compodoc": "^1.1.11",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/angular": "^6.2.9",
+    "@types/node": "^12.11.1",
+    "babel-loader": "^8.2.2",
+    "typescript": "~4.1.2"
+  }
+}
