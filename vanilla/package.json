@@ -1,0 +1,26 @@
+{
+  "name": "composition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/html": "^6.2.9",
+    "babel-loader": "^8.2.2"
+  },
+  "dependencies": {
+    "handsontable": "../lib/handsontable-8.4.0.tgz",
+    "numbro": "^2.3.2"
+  }
+}
