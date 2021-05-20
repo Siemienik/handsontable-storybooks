@@ -10,7 +10,7 @@ module.exports = {
   refs: {
     react: {
       title: 'React',
-      url: 'http://localhost:6007',
+      url: 'http://localhost:6011',
     },
     angular: {
       title: 'Angular',

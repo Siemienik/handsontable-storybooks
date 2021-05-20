@@ -18,7 +18,7 @@ const Template = (template) => (args, {argTypes}) => ({
   `,
 });
 
-export const JustATable = Template().bind({});
+export const JustATable = Template();
 JustATable.args = {
     hotTable: {
         settings: {
@@ -28,7 +28,7 @@ JustATable.args = {
     }
 };
 
-export const CollHeaders = Template().bind({});
+export const CollHeaders = Template();
 CollHeaders.args = {
     hotTable: {
         settings: {
@@ -50,7 +50,7 @@ export const ColumnDeclaringSettings = Template(`
     </hot-column>
   </hot-table>
 </div>
-`).bind({});
+`);
 ColumnDeclaringSettings.args = {
     hotTable: {
         settings: {
@@ -79,7 +79,7 @@ export const ColumnArrayOfObjects = Template(`
     </hot-column>
   </hot-table>
 </div>
-`).bind({});
+`);
 ColumnArrayOfObjects.args = {
     hotTable: {
         data: [
@@ -124,7 +124,7 @@ export const SettingUpALocale = Template(`
     ></hot-column>
   </hot-table>
 </div>
-`).bind({});
+`);
 SettingUpALocale.args = {
     formatJP: {
         pattern: '0,0.00 $',
@@ -156,7 +156,7 @@ SettingUpALocale.args = {
     }
 };
 
-export const CustomIdClassStyle = Template().bind({});
+export const CustomIdClassStyle = Template();
 CustomIdClassStyle.args = {
     source: 'https://dev.handsontable.com/docs/next/vue-custom-id-class-style/',
     hotTable: {
@@ -173,7 +173,7 @@ CustomIdClassStyle.args = {
   }
 };
 
-export const CustomContextMenu = Template().bind({});
+export const CustomContextMenu = Template();
 CustomContextMenu.args = {
   source: 'https://dev.handsontable.com/docs/next/vue-custom-context-menu-example/',
   hotTable: {
@@ -198,20 +198,20 @@ CustomContextMenu.args = {
   }
 };
 
-export const CustomEditorAsAClass = Template().bind({});
+export const CustomEditorAsAClass = Template();
 CustomEditorAsAClass.args = {
   source: 'https://dev.handsontable.com/docs/next/vue-custom-editor-example/#declaring-an-editor-as-a-class',
   hotTable: {
     settings: {
       startRows: 5,
-        columns: [{
-          editor: CustomEditor
-        }],
-        colHeaders: true,
-        colWidths: 200,
-        licenseKey: 'non-commercial-and-evaluation'
-      }
+      columns: [{
+        editor: CustomEditor
+      }],
+      colHeaders: true,
+      colWidths: 200,
+      licenseKey: 'non-commercial-and-evaluation',
     }
+  }
 };
 
 
