@@ -2,7 +2,7 @@
 
 I made this project with Oskar Kowalów to makes repeatedly work stupid-easy. 
 
-**For localhost test*, copy-paste all `.tgz` into `./lib` and change path in package.json.
+**For localhost test**, copy-paste all `.tgz` into `./lib` and change path in package.json.
 
 ## Storybooks
 
