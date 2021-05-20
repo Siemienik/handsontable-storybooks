@@ -1,8 +1,9 @@
 import { createHot } from './Hot';
 import Handsontable from "handsontable";
+import {HyperFormula} from "hyperformula";
 
 export default {
-  title: 'HOT',
+  title: 'HOT+HF',
 };
 
 const Template = (args ) => {
@@ -12,11 +13,14 @@ const Template = (args ) => {
 };
 
 export const JustATable = Template.bind({});
-JustATable.args =  {
+JustATable.args = {
   settings: {
     data: Handsontable.helper.createSpreadsheetData(6, 10),
     colHeaders: true,
     rowHeaders: true,
+    formulas: {
+      engine: HyperFormula
+    },
     licenseKey: "non-commercial-and-evaluation",
   },
   callback:(hot)=>{

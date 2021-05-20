@@ -2,7 +2,7 @@ import {HotColumn, HotTable} from '@handsontable/react';
 import Handsontable from "handsontable";
 
 export default {
-    title: 'HOT/HotTable',
+    title: 'HOT',
     component: HotTable
 };
 

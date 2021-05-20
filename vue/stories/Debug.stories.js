@@ -1,9 +1,9 @@
-import HotTable  from '../src/DebugInfo';
+import DebugInfo  from '../src/DebugInfo';
 import Handsontable from "handsontable";
 
 export default {
   title: 'DebugInfo',
-  component: HotTable,
+  component: DebugInfo,
   // argTypes: {
   //   backgroundColor: { control: 'color' },
   //   size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
@@ -12,8 +12,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { HotTable },
-  template: '<hot-table v-bind="$props"></hot-table>',
+  components: { DebugInfo },
+  template: '<DebugInfo />',
 });
 
 export const BuildData = Template.bind({});

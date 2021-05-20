@@ -4,7 +4,7 @@ import {HyperFormula} from "hyperformula";
 import CustomEditor from "../src/CustomEditor";
 
 export default {
-  title: 'HOT+HF/HotTable',
+  title: 'HOT+HF',
   component: HotTable,
 };
 

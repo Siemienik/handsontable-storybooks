@@ -3,9 +3,9 @@ import React from 'react';
 import { DebugInfo } from '../DebugInfo';
 
 export default {
-  title: 'Example/DebugInfo',
+  title: 'DebugInfo',
   component: DebugInfo,
 };
 
-export const Template = () => <DebugInfo />;
+export const BuildData = () => <DebugInfo />;
 

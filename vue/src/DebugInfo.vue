@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    {{debug}}
+    hotBuildDate: {{debug.hotBuildDate}},<br/>
+    hotVersion: {{debug.hotVersion}},<br/>
+    hfBuildDate: {{debug.hfBuildDate}},<br/>
+    hfVersion: {{debug.hfVersion}},<br/>
+    hotTableVersion: {{debug.hotTableVersion}},<br/>
   </div>
 </template>
 
@@ -10,7 +14,7 @@ import Handsontable from 'handsontable';
 import { HyperFormula } from 'hyperformula';
 
 export default {
-  name: 'App',
+  name: 'DebugInfo',
   data: function() {
     return {
       debug: {
@@ -18,11 +22,9 @@ export default {
         hotVersion: Handsontable.version,
         hfBuildDate: HyperFormula.buildDate,
         hfVersion: HyperFormula.version,
+        hotTableVersion: HotTable.version,
       },
     }
   },
-  components: {
-    HotTable
-  }
 }
 </script>

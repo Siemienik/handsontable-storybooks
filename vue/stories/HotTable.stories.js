@@ -3,7 +3,7 @@ import Handsontable from "handsontable";
 import CustomEditor from "../src/CustomEditor";
 
 export default {
-    title: 'HOT/HotTable',
+    title: 'HOT',
     component: HotTable
 };
 
