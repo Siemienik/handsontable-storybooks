@@ -1,7 +1,7 @@
-
 import "handsontable/dist/handsontable.full.css"
 import numbro from 'numbro';
 import languages from 'numbro/dist/languages.min.js';
+import 'cypress-storybook/angular'
 
 // register needed languages
 numbro.registerLanguage(languages['ja-JP']);
