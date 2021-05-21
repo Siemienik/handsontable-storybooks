@@ -47,5 +47,6 @@ npm run start
 
 ## TODO:
 
-* [ ] Investigate how to call instance methods when using  wrappers.
+* [ ] Define cypress commands: getCellByValue, snapshotHot, openContextMenu, selectContextMenuItem,
+* [ ] Extract cypress shared code into one place.
 * [ ] https://storybook.js.org/addons/storycap where cypress is redundant

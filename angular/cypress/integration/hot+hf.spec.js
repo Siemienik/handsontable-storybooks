@@ -20,7 +20,7 @@ describe(STORY, () => {
                 .dblclick();
 
             cy.get('textarea:first').type('{selectall}{del}=1+2{enter}');
-            cy.matchImageSnapshot();
+            cy.get('div.handsontable:first').matchImageSnapshot();
         })
     })
 
@@ -39,7 +39,7 @@ describe(STORY, () => {
 
             cy.contains('.htContextMenu .htItemWrapper','Insert row above this one (custom name)').click()
 
-            cy.matchImageSnapshot();
+            cy.get('div.handsontable:first').matchImageSnapshot();
         })
 
         it('Add row below', () => {
@@ -50,7 +50,7 @@ describe(STORY, () => {
                 .rightclick();
 
             cy.contains('.htContextMenu .htItemWrapper','Insert row below').click()
-            cy.matchImageSnapshot();
+            cy.get('div.handsontable:first').matchImageSnapshot();
         })
 
         it('Clear all cells', () => {
@@ -61,7 +61,7 @@ describe(STORY, () => {
                 .rightclick();
 
             cy.contains('.htContextMenu .htItemWrapper','Clear all cells (custom)').click()
-            cy.matchImageSnapshot();
+            cy.get('div.handsontable:first').matchImageSnapshot();
         })
     })
 })
