@@ -3,11 +3,10 @@ import { moduleMetadata } from '@storybook/angular';
 import { HotTableModule} from "@handsontable/angular";
 import  {MyHotTable} from './MyHotTable';
 import Handsontable from "handsontable";
-import {HyperFormula} from "hyperformula";
-
+import {HyperFormula} from 'hyperformula';
 
 export default {
-  title: 'HOT',
+  title: 'HOT+HF',
   component: MyHotTable,
   decorators: [
     moduleMetadata({
@@ -17,14 +16,19 @@ export default {
   ],
 } as Meta;
 
-export const JustATable = () => ( {props:{
-  settings: {
-    data: Handsontable.helper.createSpreadsheetData(6, 10),
-    colHeaders: true,
-    rowHeaders: true,
-    licenseKey: "non-commercial-and-evaluation",
-  },
-}});
+export const JustATable = () => ( {
+  props:{
+    settings: {
+      data: Handsontable.helper.createSpreadsheetData(6, 10),
+      colHeaders: true,
+      rowHeaders: true,
+      formulas: {
+        engine: HyperFormula
+      },
+      licenseKey: "non-commercial-and-evaluation",
+    },
+  }
+});
 
 export const HotColumn = () => ( {
   template:`
@@ -32,6 +36,7 @@ export const HotColumn = () => ( {
     <a href="https://dev.handsontable.com/docs/next/angular-simple-example/#angular-basic-example" target="_blank">Source</a>
     <hot-table
       [data]="dataset"
+      [formulas]="formulas"
       [colHeaders]="true"
       [rowHeaders]="true"
       licenseKey="non-commercial-and-evaluation">
@@ -52,5 +57,8 @@ export const HotColumn = () => ( {
       {id: 7, name: 'Cora Fair', address: 'Sunset Boulevard'},
       {id: 8, name: 'Jack Right', address: 'Michigan Avenue'},
     ],
+    formulas: {
+      engine: HyperFormula
+    },
   }
 });

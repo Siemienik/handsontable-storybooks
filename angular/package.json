@@ -18,6 +18,7 @@
     "@angular/router": "~11.1.1",
     "@handsontable/angular": "^8.4.0",
     "handsontable": "^8.4.0",
+    "hyperformula": "^0.6.0",
     "numbro": "^2.1.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

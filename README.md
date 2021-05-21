@@ -24,6 +24,7 @@ npm run start
 
 ### Vanilla
 
+* Covered with cypress tests
 * In folder: `./vanilla`
 * In browser: http://localhost:6010/
 
@@ -35,6 +36,7 @@ npm run start
 
 ### React
 
+* Covered with cypress tests
 * In folder: `./react`
 * In browser: http://localhost:6011/
 
@@ -45,10 +47,5 @@ npm run start
 
 ## TODO:
 
-* [ ] TODO: (ANGULAR) I have to investigate more convenient way to use our components. 
-* [ ] TODO: Investigate how to call instance methods when using  wrappers.
-* [ ] Maybe: auto screenshots shooter (addon is ready, requires 2 lines of code per storybook)
-* [ ] Maybe: check cypress integration to automate test.
-* [ ] https://storybook.js.org/addons/storycap
-
-    
+* [ ] Investigate how to call instance methods when using  wrappers.
+* [ ] https://storybook.js.org/addons/storycap where cypress is redundant
