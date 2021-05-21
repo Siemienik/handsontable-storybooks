@@ -90,7 +90,7 @@ export const CustomId = () => ( {
 export const SettingUpALocale = () => ( {
   template:`
     <div>
-      <hot-table [data]="dataset" [colHeaders]="true" [licenseKey]="non-commercial-and-evaluation" [formulas]="formulas">
+      <hot-table [data]="dataset" [colHeaders]="true" licenseKey="non-commercial-and-evaluation" [formulas]="formulas">
         <hot-column
           data="productName"
           [readOnly]="true"
