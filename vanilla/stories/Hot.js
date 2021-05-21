@@ -2,13 +2,20 @@ import Handsontable from "handsontable";
 
 export const createHot = ({
     settings,
-    callback = ()=>{}
+    callback = ()=>{},
+    css = ''
 }) => {
-  const container = document.createElement('div');
 
+  const style = document.createElement('style');
+  style.innerHTML = css;
+
+  const container = document.createElement('div');
   const hot = new Handsontable(container, settings);
 
   callback(hot);
 
-  return container;
+  const wrapper = document.createElement('div');
+  wrapper.append(style, container);
+
+  return wrapper;
 };
