@@ -2,9 +2,9 @@
   "name": "angular1",
   "version": "0.0.0",
   "scripts": {
-    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "start": "npm run docs:json && start-storybook -p 6008",
-    "build": "npm run docs:json && build-storybook"
+    "start": "start-storybook -p 6008",
+    "build": "build-storybook",
+    "cy": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +18,7 @@
     "@angular/router": "~11.1.1",
     "@handsontable/angular": "^8.4.0",
     "handsontable": "^8.4.0",
+    "hyperformula": "^0.6.0",
     "numbro": "^2.1.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
@@ -28,13 +29,17 @@
     "@angular/cli": "~11.1.2",
     "@angular/compiler-cli": "~11.1.1",
     "@babel/core": "^7.14.3",
-    "@compodoc/compodoc": "^1.1.11",
+    "@storybook/addon-a11y": "^6.2.9",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-storysource": "^6.2.9",
     "@storybook/angular": "^6.2.9",
     "@types/node": "^12.11.1",
     "babel-loader": "^8.2.2",
+    "cypress": "^7.3.0",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-storybook": "^0.5.1",
     "typescript": "~4.1.2"
   }
 }

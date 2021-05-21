@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app">:)
     hotBuildDate: {{debug.hotBuildDate}},<br/>
     hotVersion: {{debug.hotVersion}},<br/>
     hfBuildDate: {{debug.hfBuildDate}},<br/>

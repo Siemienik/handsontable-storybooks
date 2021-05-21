@@ -1,11 +1,7 @@
-
-import { setCompodocJson } from "@storybook/addon-docs/angular";
-import docJson from "../documentation.json";
 import "handsontable/dist/handsontable.full.css"
 import numbro from 'numbro';
 import languages from 'numbro/dist/languages.min.js';
-
-setCompodocJson(docJson);
+import 'cypress-storybook/angular'
 
 // register needed languages
 numbro.registerLanguage(languages['ja-JP']);
