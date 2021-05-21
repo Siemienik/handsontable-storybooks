@@ -1,4 +1,4 @@
-const STORY = 'HOT';
+const STORY = 'HOT+HF';
 
 describe('Hot', () => {
     // Note the use of `before`
