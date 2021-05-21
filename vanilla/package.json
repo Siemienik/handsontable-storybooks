@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6010",
-    "build": "build-storybook"
+    "build": "build-storybook",
+    "cy": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,10 @@
     "@storybook/addon-links": "^6.2.9",
     "@storybook/addon-storysource": "^6.2.9",
     "@storybook/html": "^6.2.9",
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "cypress": "^4.12.1",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-storybook": "^0.5.1"
   },
   "dependencies": {
     "handsontable": "../lib/handsontable-8.4.0.tgz",
