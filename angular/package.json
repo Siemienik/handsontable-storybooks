@@ -2,9 +2,8 @@
   "name": "angular1",
   "version": "0.0.0",
   "scripts": {
-    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "start": "npm run docs:json && start-storybook -p 6008",
-    "build": "npm run docs:json && build-storybook"
+    "start": "start-storybook -p 6008",
+    "build": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -29,7 +28,6 @@
     "@angular/cli": "~11.1.2",
     "@angular/compiler-cli": "~11.1.1",
     "@babel/core": "^7.14.3",
-    "@compodoc/compodoc": "^1.1.11",
     "@storybook/addon-a11y": "^6.2.9",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",

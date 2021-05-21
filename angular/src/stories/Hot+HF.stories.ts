@@ -4,6 +4,7 @@ import { HotTableModule} from "@handsontable/angular";
 import  {MyHotTable} from './MyHotTable';
 import Handsontable from "handsontable";
 import {HyperFormula} from 'hyperformula';
+import {CustomEditor} from "../editors/CustomEditor";
 
 export default {
   title: 'HOT+HF',
@@ -33,7 +34,6 @@ export const JustATable = () => ( {
 export const HotColumn = () => ( {
   template:`
   <div>
-    <a href="https://dev.handsontable.com/docs/next/angular-simple-example/#angular-basic-example" target="_blank">Source</a>
     <hot-table
       [data]="dataset"
       [formulas]="formulas"
@@ -59,6 +59,165 @@ export const HotColumn = () => ( {
     ],
     formulas: {
       engine: HyperFormula
-    },
+    }
   }
 });
+
+export const CustomId = () => ( {
+  template:`
+  <div>
+    <hot-table
+      [settings]="hotSettings"
+      [hotId]="id">
+    </hot-table>
+  </div>
+  `,
+  props:{
+    hotSettings: {
+      startRows: 5,
+      startCols: 5,
+      colHeaders: true,
+      stretchH: 'all',
+      formulas: {
+        engine: HyperFormula
+      },
+      licenseKey: 'non-commercial-and-evaluation'
+    },
+    id: 'my-custom-id',
+  }
+});
+
+export const SettingUpALocale = () => ( {
+  template:`
+    <div>
+      <hot-table [data]="dataset" [colHeaders]="true" [licenseKey]="non-commercial-and-evaluation" [formulas]="formulas">
+        <hot-column
+          data="productName"
+          [readOnly]="true"
+          title="Product Name"
+        ></hot-column>
+        <hot-column
+          data="JP_price"
+          title="Price in Japan"
+          type="numeric"
+          [numericFormat]="formatJP"
+        ></hot-column>
+        <hot-column
+          data="TR_price"
+          title="Price in Turkey"
+          type="numeric"
+          [numericFormat]="formatTR"
+        ></hot-column>
+      </hot-table>
+    </div>
+  `,
+  props:{
+    formatTR: {
+      pattern: '0,0.00 $',
+      culture: 'tr-TR'
+    },
+    formatJP: {
+      pattern: '0,0.00 $',
+      culture: 'ja-JP'
+    },
+    dataset: [
+      { productName: 'Product A', JP_price: 1.32, TR_price: 100.56 },
+      { productName: 'Product B', JP_price: 2.22, TR_price: 453.5 },
+      { productName: 'Product C', JP_price: 3.1, TR_price: 678.1 }
+    ],
+    formulas: {
+      engine: HyperFormula
+    }
+  }
+});
+
+export const CustomContextMenu = () => ( {
+  props:{
+    settings: {
+      data: Handsontable.helper.createSpreadsheetData(5, 5),
+      colHeaders: true,
+      contextMenu: {
+        items: {
+          'row_above': {
+            name: 'Insert row above this one (custom name)'
+          },
+          'row_below': {},
+          'separator': Handsontable.plugins.ContextMenu.SEPARATOR,
+          'clear_custom': {
+            name: 'Clear all cells (custom)',
+            callback: function() {
+              this.clear();
+            }
+          }
+        }
+      },
+      licenseKey: 'non-commercial-and-evaluation',
+      formulas: {
+        engine: HyperFormula
+      }
+    },
+  }
+} );
+
+export const CustomEditorExample = () => ( {
+  props:{
+    settings: {
+      startRows: 5,
+      columns: [
+        {
+          editor: CustomEditor
+        }
+      ],
+      colHeaders: true,
+      colWidths: 200,
+      licenseKey: 'non-commercial-and-evaluation',
+      formulas: {
+        engine: HyperFormula
+      }
+    },
+  }
+} );
+
+export const CustomRendererExample = () => ( {
+  props:{
+    settings: {
+      data:
+          [
+            ['A1', 'https://handsontable.com/docs/images/examples/professional-javascript-developers-nicholas-zakas.jpg'],
+            ['A2', 'https://handsontable.com/docs/images/examples/javascript-the-good-parts.jpg']
+          ],
+      columns: [
+        {},
+        {
+          renderer(instance, td, row, col, prop, value, cellProperties) {
+            const escaped = Handsontable.helper.stringify(value);
+            let img = null;
+
+            if (escaped.indexOf('http') === 0) {
+              img = document.createElement('IMG');
+              img.src = value;
+
+              Handsontable.dom.addEvent(img, 'mousedown', event => {
+                event.preventDefault();
+              });
+
+              Handsontable.dom.empty(td);
+              td.appendChild(img);
+
+            } else {
+              Handsontable.renderers.TextRenderer.apply(this, arguments);
+            }
+
+            return td;
+          }
+        }
+      ],
+      colHeaders: true,
+      rowHeights: 55,
+      licenseKey: 'non-commercial-and-evaluation',
+      formulas: {
+        engine: HyperFormula
+      }
+    }
+  }
+} );
