@@ -1,6 +1,5 @@
 import Handsontable from 'handsontable';
 
-//todo import for vanilla (not working for react)
 export class CustomEditor extends Handsontable.editors.TextEditor {
   constructor(props) {
     super(props);
