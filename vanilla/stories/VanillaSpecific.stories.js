@@ -2,7 +2,7 @@ import { createHot } from './Hot';
 import Handsontable from "handsontable";
 
 export default {
-  title: 'HOT',
+  title: 'VanillaSpecific',
 };
 
 const Template = (args ) => {
@@ -11,21 +11,18 @@ const Template = (args ) => {
   return createHot({ ...args });
 };
 
-export const JustATable = Template.bind({});
-JustATable.args =  {
-  settings: {
-    data: Handsontable.helper.createSpreadsheetData(6, 10),
-    colHeaders: true,
-    rowHeaders: true,
-    licenseKey: "non-commercial-and-evaluation",
-  },
-  callback:(hot)=>{
-    console.log('callback:', hot);
-  }
-};
-
+// todo: at this moment css cannot be set for wrappers
 export const ContextMenuForFont = Template.bind({});
 ContextMenuForFont.args =  {
+  css: `
+    .sans {
+      font: 0.8em sans-serif;
+    }
+    
+    .verdana {
+      font: 0.8em Verdana;
+    }
+  `,
   settings: {
     data: [
       ['', 'Kia', 'Nissan', 'Toyota', 'Honda', 'Mazda', 'Ford'],
@@ -59,14 +56,5 @@ ContextMenuForFont.args =  {
       },
     },
   },
-  css: `
-    .sans {
-      font: 0.8em sans-serif;
-    }
-    
-    .verdana {
-      font: 0.8em Verdana;
-    }
-  `
 };
 
