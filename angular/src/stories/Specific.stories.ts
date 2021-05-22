@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/angular/types-6-0';
 import { moduleMetadata } from '@storybook/angular';
 import { HotTableModule} from "@handsontable/angular";
-import  {MyHotTable} from './MyHotTable';
+import {MyHotTable} from './MyHotTable';
 import {HyperFormula} from 'hyperformula';
 
 export default {

@@ -1,6 +1,7 @@
-import {CustomEditor} from "./editors/CustomEditor";
+import {CustomEditor} from "./CustomEditor";
 import Handsontable from "handsontable";
 
+//todo import for vanilla (not working for react)
 const configurations = {};
 configurations.JustATable = {
     data: Handsontable.helper.createSpreadsheetData(6, 10),

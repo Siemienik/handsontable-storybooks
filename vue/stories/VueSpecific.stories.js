@@ -1,6 +1,5 @@
 import {HotColumn, HotTable} from '@handsontable/vue';
 import Handsontable from "handsontable";
-import CustomEditor from "../src/CustomEditor";
 
 export default {
     title: 'VueSpecific',
