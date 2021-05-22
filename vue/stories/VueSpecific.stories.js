@@ -3,42 +3,16 @@ import Handsontable from "handsontable";
 import CustomEditor from "../src/CustomEditor";
 
 export default {
-    title: 'HOT',
+    title: 'VueSpecific',
     component: HotTable
 };
 
 const Template = (template) => (args, {argTypes}) => ({
     props: Object.keys(argTypes),
     components: {HotTable, HotColumn},
-    template: template || `
-    <div>
-      <a v-if="$props.source?.startsWith('http')" :href="$props.source" target="_blank">Source</a>
-      <hot-table v-bind="$props.hotTable"></hot-table>
-    </div>
+    template: template || `<hot-table v-bind="$props.hotTable"></hot-table>
   `,
 });
-
-export const JustATable = Template();
-JustATable.args = {
-    hotTable: {
-        settings: {
-            data: Handsontable.helper.createSpreadsheetData(10, 10),
-            licenseKey: 'non-commercial-and-evaluation'
-        }
-    }
-};
-
-export const CollHeaders = Template();
-CollHeaders.args = {
-    hotTable: {
-        settings: {
-            data: Handsontable.helper.createSpreadsheetData(6, 10),
-            colHeaders: true,
-            licenseKey: 'non-commercial-and-evaluation'
-        },
-    },
-    source: 'https://dev.handsontable.com/docs/next/vue-simple-example/'
-};
 
 export const ColumnDeclaringSettings = Template(`
 <div>
@@ -172,48 +146,6 @@ CustomIdClassStyle.args = {
     style: 'width: 300px; height: 142px; overflow: hidden; border: 1px solid red;'
   }
 };
-
-export const CustomContextMenu = Template();
-CustomContextMenu.args = {
-  source: 'https://dev.handsontable.com/docs/next/vue-custom-context-menu-example/',
-  hotTable: {
-    data: Handsontable.helper.createSpreadsheetData(5, 5),
-    colHeaders: true,
-    contextMenu: {
-      items: {
-        'row_above': {
-          name: 'Insert row above this one (custom name)'
-        },
-        'row_below': {},
-        'separator': Handsontable.plugins.ContextMenu.SEPARATOR,
-        'clear_custom': {
-          name: 'Clear all cells (custom)',
-          callback() {
-            this.clear();
-          }
-        }
-      }
-    },
-    licenseKey: 'non-commercial-and-evaluation'
-  }
-};
-
-export const CustomEditorAsAClass = Template();
-CustomEditorAsAClass.args = {
-  source: 'https://dev.handsontable.com/docs/next/vue-custom-editor-example/#declaring-an-editor-as-a-class',
-  hotTable: {
-    settings: {
-      startRows: 5,
-      columns: [{
-        editor: CustomEditor
-      }],
-      colHeaders: true,
-      colWidths: 200,
-      licenseKey: 'non-commercial-and-evaluation',
-    }
-  }
-};
-
 
 /* todo:
 * * https://dev.handsontable.com/docs/next/vue-hot-column/#declaring-a-custom-renderer-as-a-component

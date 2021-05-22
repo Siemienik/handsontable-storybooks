@@ -15,14 +15,17 @@ export default {
     ],
 };
 
+const mapConfigToStory = (configuration) => () => ({props:{settings:configurations}})
+
+export const JustATable = () => mapConfigToStory(configurations.JustATable);
+export const CustomContextMenu = () => mapConfigToStory(configurations.CustomContextMenu);
+export const CustomEditorExample = () => mapConfigToStory(configurations.CustomEditorExample);
+export const CustomRendererExample = () => mapConfigToStory(configurations.CustomRendererExample);
+export const CustomEditorAsAClass = () => mapConfigToStory(configurations.CustomEditorAsAClass);
+
 const formulas = {formulas:{engine:HyperFormula}};
-
-export const JustATable = () => ({props:{settings:configurations.JustATable}});
-export const CustomContextMenu = () => ({props:{settings:configurations.CustomContextMenu}});
-export const CustomEditorExample = () => ({props:{settings:configurations.CustomEditorExample}});
-export const CustomRendererExample = () => ({props:{settings:configurations.CustomRendererExample}});
-
-export const HfJustATable = () => ({props:{settings:{...configurations.JustATable, ...formulas}}});
-export const HfCustomContextMenu = () => ({props:{settings:{...configurations.CustomContextMenu, ...formulas}}});
-export const HfCustomEditorExample = () => ({props:{settings:{...configurations.CustomEditorExample, ...formulas}}});
-export const HfCustomRendererExample = () => ({props:{settings:{...configurations.CustomRendererExample, ...formulas}}});
+export const HfJustATable = () => mapConfigToStory({...configurations.JustATable, ...formulas});
+export const HfCustomContextMenu = () => mapConfigToStory({...configurations.CustomContextMenu, ...formulas});
+export const HfCustomEditorExample = () => mapConfigToStory({...configurations.CustomEditorExample, ...formulas});
+export const HfCustomRendererExample = () => mapConfigToStory({...configurations.CustomRendererExample, ...formulas});
+export const HfCustomEditorAsAClass = () => mapConfigToStory({...configurations.CustomEditorAsAClass, ...formulas});

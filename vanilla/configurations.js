@@ -1,4 +1,4 @@
-import {CustomEditor} from "../angular/src/editors/CustomEditor";
+import {CustomEditor} from "./editors/CustomEditor";
 import Handsontable from "handsontable";
 
 const configurations = {};
@@ -20,7 +20,7 @@ configurations.CustomContextMenu = {
             'separator': Handsontable.plugins.ContextMenu.SEPARATOR,
             'clear_custom': {
                 name: 'Clear all cells (custom)',
-                callback: function () {
+                callback() {
                     this.clear();
                 }
             }
@@ -75,5 +75,15 @@ configurations.CustomRendererExample = {
     rowHeights: 55,
     licenseKey: 'non-commercial-and-evaluation'
 };
+//todo angular, vanilla, vue, react
+configurations.CustomEditorAsAClass = {
+    startRows: 5,
+        columns: [{
+        editor: CustomEditor
+    }],
+        colHeaders: true,
+        colWidths: 200,
+        licenseKey: 'non-commercial-and-evaluation',
+}
 
 export default configurations;

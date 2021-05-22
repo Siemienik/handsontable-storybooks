@@ -2,9 +2,7 @@ import { Meta } from '@storybook/angular/types-6-0';
 import { moduleMetadata } from '@storybook/angular';
 import { HotTableModule} from "@handsontable/angular";
 import  {MyHotTable} from './MyHotTable';
-import Handsontable from "handsontable";
 import {HyperFormula} from 'hyperformula';
-import {CustomEditor} from "../editors/CustomEditor";
 
 export default {
   title: 'AngularSpecific',
