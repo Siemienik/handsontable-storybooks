@@ -320,4 +320,8 @@ configurations.ValidationAndDropDown = {
     }
 }
 
-export default configurations;
+export default configurations
+
+//todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
+//todo instance under cell https://jsfiddle.net/handsoncode/stv62pqr
+//todo custom dropdown menu https://jsfiddle.net/handsoncode/ue9abc3w

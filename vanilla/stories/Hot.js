@@ -17,5 +17,7 @@ export const createHot = ({
   const wrapper = document.createElement('div');
   wrapper.append(style, container);
 
+  setTimeout(()=>hot.render());
+
   return wrapper;
 };

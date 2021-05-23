@@ -11,8 +11,6 @@ export default () => {
                 cy.loadStory(STORY, 'JustATable')
             })
             it('Type a formula `=1+2` into A1', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .get('tr:first')
                     .get('td:first')
@@ -31,8 +29,6 @@ export default () => {
             })
 
             it('Add row above', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -43,8 +39,6 @@ export default () => {
             })
 
             it('Add row below', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -55,8 +49,6 @@ export default () => {
             })
 
             it('Add row above and below', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 //above
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -76,8 +68,6 @@ export default () => {
             })
 
             it('Clear all cells', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -94,8 +84,6 @@ export default () => {
                 cy.loadStory(STORY, 'StandardContextMenu')
             })
             it('Add rows above', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // first
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -115,8 +103,6 @@ export default () => {
             })
 
             it('Add rows below', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // first
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -136,8 +122,6 @@ export default () => {
             })
 
             it('Add cols left', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // first
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -157,8 +141,6 @@ export default () => {
             })
 
             it('Add cols right', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // first
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -178,8 +160,6 @@ export default () => {
             })
 
             it('Add cols and rows', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // up
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -213,8 +193,6 @@ export default () => {
             })
 
             it('Remove row', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -225,8 +203,6 @@ export default () => {
             })
 
             it('Remove column', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -237,8 +213,6 @@ export default () => {
             })
 
             it('Remove row & column', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 //row
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -257,8 +231,6 @@ export default () => {
             })
 
             it('Remove row & column then undo', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 //row
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -284,8 +256,6 @@ export default () => {
             })
 
             it('Remove row & column then undu then redo', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 //row
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -319,8 +289,6 @@ export default () => {
 
             // todo do not cut a value
             it('Cut', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -331,8 +299,6 @@ export default () => {
             })
 
             it('Read only', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
                     .rightclick();
@@ -343,8 +309,6 @@ export default () => {
             })
 
             it('Read only & update two cells', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 //read only
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -369,8 +333,6 @@ export default () => {
 
             // todo do not cut a value
             it('Read only & Cut', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // read only
                 cy.get('.htCore > tbody')
                     .contains('td', 'B2')
@@ -401,8 +363,6 @@ export default () => {
             })
 
             it('Collapse two rows', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // collapse first
                 cy.get('.ht_nestingCollapse:first')
                     .click({force: true});
@@ -414,8 +374,6 @@ export default () => {
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
             it('Collapse & expand row', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // collapse first
                 cy.get('.ht_nestingCollapse:first')
                     .click({force: true});
@@ -432,8 +390,6 @@ export default () => {
             })
 
             it('Add row above parent', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'Best Rock Performance')
                     .rightclick();
@@ -443,8 +399,6 @@ export default () => {
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
             it('Add row below parent', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'Best Rock Performance')
                     .rightclick();
@@ -454,8 +408,6 @@ export default () => {
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
             it('Add child row into parent', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'Best Rock Performance')
                     .rightclick();
@@ -466,8 +418,6 @@ export default () => {
             })
 
             it('Add row above child', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'Florence & The Machine')
                     .rightclick();
@@ -477,8 +427,6 @@ export default () => {
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
             it('Add row below child', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'Florence & The Machine')
                     .rightclick();
@@ -488,8 +436,6 @@ export default () => {
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
             it('Add child row into child', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td', 'Florence & The Machine')
                     .rightclick();
@@ -499,8 +445,6 @@ export default () => {
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
             it('Detach child from parent', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // detach
                 cy.get('.htCore > tbody')
                     .contains('td', 'Florence & The Machine')
@@ -523,8 +467,6 @@ export default () => {
             })
 
             it('Click a button', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 // detach
                 cy.get('.htCore > tbody')
                     .contains('button', '8')
@@ -545,14 +487,10 @@ export default () => {
             })
 
             it('Invalid cell', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.matchImageSnapshot();
             })
 
             it('Invalid cell after update', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td','4.5')
                     .dblclick();
@@ -563,8 +501,6 @@ export default () => {
             })
 
             it('Valid cell after update', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td','4,')
                     .dblclick();
@@ -584,8 +520,6 @@ export default () => {
             })
 
             it('Change to invalid year', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td','2014')
                     .dblclick();
@@ -596,8 +530,6 @@ export default () => {
             })
 
             it('Change to invalid owner', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td','John Smith')
                     .dblclick();
@@ -608,8 +540,6 @@ export default () => {
             })
 
             it('Change year causes changed name', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td','2014')
                     .dblclick();
@@ -620,8 +550,6 @@ export default () => {
             })
 
             it('Change owner doesn\'t causes changed year', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .contains('td','James Anthon')
                     .dblclick();
