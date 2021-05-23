@@ -75,5 +75,12 @@ configurations.CustomRendererExample = {
     rowHeights: 55,
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.StandardContextMenu = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    colHeaders: true,
+    rowHeaders: true,
+    contextMenu: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
 
 export default configurations;
