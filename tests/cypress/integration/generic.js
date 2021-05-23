@@ -317,7 +317,7 @@ export default () => {
             })
 
             // todo do not cut a value
-            xit('Cut', () => {
+            it('Cut', () => {
                 cy.get('body').click() // without that does not render HOT. ??!
 
                 cy.get('.htCore > tbody')
@@ -367,7 +367,7 @@ export default () => {
             })
 
             // todo do not cut a value
-            xit('Read only & Cut', () => {
+            it('Read only & Cut', () => {
                 cy.get('body').click() // without that does not render HOT. ??!
 
                 // read only
@@ -391,6 +391,128 @@ export default () => {
             //todo copy
             //todo cut
             //todo paste - it doesn't exist in a context menu, should check clipboard or paste be a shortcut
+        })
+
+        describe('NestedRows', () => {
+            // Note the use of `beforeEach`
+            beforeEach(() => {
+                cy.loadStory(STORY, 'NestedRows')
+            })
+
+            it('Collapse two rows', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                // collapse first
+                cy.get('.ht_nestingCollapse:first')
+                    .click({force: true});
+
+                // collapse second
+                cy.get('.ht_nestingCollapse:first')
+                    .click({force: true});
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+            it('Collapse & expand row', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                // collapse first
+                cy.get('.ht_nestingCollapse:first')
+                    .click({force: true});
+
+                // collapse second
+                cy.get('.ht_nestingCollapse:first')
+                    .click({force: true});
+
+                // expand first
+                cy.get('.ht_nestingExpand:first')
+                    .click({force: true});
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+            it('Add row above parent', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Best Rock Performance')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert row above').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+            it('Add row below parent', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Best Rock Performance')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert row below').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+            it('Add child row into parent', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Best Rock Performance')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert child row').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+            it('Add row above child', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Florence & The Machine')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert row above').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+            it('Add row below child', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Florence & The Machine')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert row below').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+            it('Add child row into child', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Florence & The Machine')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert child row').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+            it('Detach child from parent', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                // detach
+                cy.get('.htCore > tbody')
+                    .contains('td', 'Florence & The Machine')
+                    .rightclick();
+
+                cy.contains('.htContextMenu .htItemWrapper', 'Detach from parent').click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+
+            // todo detach from parent - makes errors
+
         })
     })
 }

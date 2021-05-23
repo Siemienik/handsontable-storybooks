@@ -24,6 +24,7 @@ export const CustomContextMenu = mapConfigToStory(configurations.CustomContextMe
 export const CustomEditorExample = mapConfigToStory(configurations.CustomEditorExample);
 export const CustomRendererExample = mapConfigToStory(configurations.CustomRendererExample);
 export const StandardContextMenu = mapConfigToStory(configurations.StandardContextMenu);
+export const NestedRows = mapConfigToStory(configurations.NestedRows);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -31,3 +32,4 @@ export const HfCustomContextMenu = mapConfigToStory({...configurations.CustomCon
 export const HfCustomEditorExample = mapConfigToStory({...configurations.CustomEditorExample, ...formulas});
 export const HfCustomRendererExample = mapConfigToStory({...configurations.CustomRendererExample, ...formulas});
 export const HfStandardContextMenu = mapConfigToStory({...configurations.StandardContextMenu, ...formulas});
+export const HfNestedRows = mapConfigToStory({...configurations.NestedRows, ...formulas});
