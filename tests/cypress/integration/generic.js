@@ -544,13 +544,13 @@ export default () => {
                 cy.loadStory(STORY, 'ValidationResultAsAComment')
             })
 
-            it.only('Invalid cell', () => {
+            it('Invalid cell', () => {
                 cy.get('body').click() // without that does not render HOT. ??!
 
                 cy.matchImageSnapshot();
             })
 
-            it.only('Invalid cell after update', () => {
+            it('Invalid cell after update', () => {
                 cy.get('body').click() // without that does not render HOT. ??!
 
                 cy.get('.htCore > tbody')
@@ -562,7 +562,7 @@ export default () => {
                 cy.matchImageSnapshot();
             })
 
-            it.only('Valid cell after update', () => {
+            it('Valid cell after update', () => {
                 cy.get('body').click() // without that does not render HOT. ??!
 
                 cy.get('.htCore > tbody')
@@ -577,6 +577,61 @@ export default () => {
 
         })
 
+        describe('ValidationAndDropDown', () => {
+            // Note the use of `beforeEach`
+            beforeEach(() => {
+                cy.loadStory(STORY, 'ValidationAndDropDown')
+            })
+
+            it('Change to invalid year', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td','2014')
+                    .dblclick();
+
+                cy.get('textarea:first').type('{selectall}{del}2014s{enter}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it('Change to invalid owner', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td','John Smith')
+                    .dblclick();
+
+                cy.get('textarea:first').type('{selectall}{del}John Sith{enter}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it('Change year causes changed name', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td','2014')
+                    .dblclick();
+
+                cy.get('textarea:first').type('{selectall}{del}2015{enter}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it('Change owner doesn\'t causes changed year', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td','James Anthon')
+                    .dblclick();
+
+                cy.get('textarea:first').type('{selectall}{del}Andrew Sanchez{enter}');
+
+                cy.matchImageSnapshot();
+            })
+
+        })
 
     })
 }

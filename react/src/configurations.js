@@ -239,5 +239,86 @@ configurations.ValidationResultAsAComment = {
         this.validateCells();
     }
 }
+configurations.ValidationAndDropDown = {
+    data: [
+        {
+            car: "Mercedes A 160",
+            year: '2014',
+            ownersByYear: {2013: 'Micheal Pattinson', 2014: 'John Smith', 2015: 'James Anthon'},
+            owner: 'John Smith',
+            cleared: false
+        },
+        {
+            car: "Citroen C4 Coupe",
+            year: '2015',
+            ownersByYear: {2013: 'Micheal Pattinson', 2014: 'John Smith', 2015: 'James Anthon'},
+            owner: 'James Anthon',
+            cleared: false
+        },
+        {
+            car: "Audi A4 Avant",
+            year: '2017',
+            ownersByYear: {2013: 'Andrew Sanchez', 2014: 'John Smith', 2015: 'James Anthon'},
+            owner: 'James Anthon',
+            cleared: true
+        },
+        {
+            car: "Opel Astra",
+            year: '2016',
+            ownersByYear: {2013: 'John Smith', 2014: 'Micheal Pattinson', 2015: 'Andrew Sanchez'},
+            owner: 'John Smith',
+            cleared: false
+        },
+    ],
+        licenseKey: 'non-commercial-and-evaluation',
+        colHeaders: true,
+        colWidths: [100, 170, 250],
+        fillHandle: false,
+        columns: [
+        {
+            data: 'car',
+            title: 'Car Model',
+        },
+        {
+            data: 'year',
+            title: 'Year of production',
+            type: 'dropdown',
+            source: ['2015', '2016', '2017'],
+        },
+        {
+            data: 'owner',
+            title: 'Owner',
+            type: 'dropdown',
+            source: ['John Smith', 'James Anthon', 'Andrew Sanchez', 'Micheal Pattinson'],
+        }
+    ],
+        afterInit(){
+        window.OPTIONS = new Map([
+            ['2015', () => ['Jack', 'Bob', 'Same']],
+            ['2016', () => ['WW', 'Saddy', 'Caven']],
+            ['2017', () => ['VC', 'Pob', 'DJ', 'Saro']],
+        ]);
+
+    },
+    afterChange(changes, source) {
+        if (source === 'loadData' || source === 'internal' || changes.length > 1) {
+            return;
+        }
+
+        const [row, prop, oldValue, newValue] = changes[0];
+
+        if (prop !== 'year') {
+            return;
+        }
+        if (!window.OPTIONS.has(newValue)) {
+            return;
+        }
+
+        const option = window.OPTIONS.get(newValue)();
+
+        this.setCellMeta(row, this.propToCol('owner'), 'source', option);
+        this.setDataAtRowProp(row, 'owner', option[0]);
+    }
+}
 
 export default configurations;
