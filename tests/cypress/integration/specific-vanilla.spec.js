@@ -14,8 +14,6 @@ describe('Vanilla',{baseUrl:'http://localhost:6010/'},  () => {
             })
 
             it('Change font by using custom context menu', () => {
-                cy.get('body').click() // without that does not render HOT. ??!
-
                 cy.get('.htCore > tbody')
                     .get('tr:first')
                     .get('td:first')
