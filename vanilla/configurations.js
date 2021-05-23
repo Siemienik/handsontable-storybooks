@@ -212,5 +212,31 @@ configurations.ButtonRendererWithAction = {
         return cellPrp
     }
 }
+configurations.ValidationResultAsAComment = {
+    data: [[4.5, 'Hello'],[`4,`, 'Hello']],
+    licenseKey: 'non-commercial-and-evaluation',
+    colWidths: 100,
+    rowHeaders: true,
+    colHeaders: true,
+    comments: true,
+    columns: [
+        {type: 'numeric'},
+        {},
+    ],
+    afterValidate(isValid, value, row, prop) {
+        const commentsPlugin = this.getPlugin('comments');
+
+        if (!isValid) {
+            commentsPlugin.setCommentAtCell(row, prop, 'Invalid cell');
+        } else {
+            commentsPlugin.removeCommentAtCell(row, prop);
+        }
+
+        this.render();
+    },
+    afterInit(){
+        this.validateCells();
+    }
+}
 
 export default configurations;

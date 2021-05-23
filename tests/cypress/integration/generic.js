@@ -19,6 +19,7 @@ export default () => {
                     .dblclick();
 
                 cy.get('textarea:first').type('{selectall}{del}=1+2{enter}');
+
                 cy.matchImageSnapshot();
             })
         })
@@ -521,7 +522,7 @@ export default () => {
                 cy.loadStory(STORY, 'ButtonRendererWithAction')
             })
 
-            it.only('Click a button', () => {
+            it('Click a button', () => {
                 cy.get('body').click() // without that does not render HOT. ??!
 
                 // detach
@@ -534,6 +535,45 @@ export default () => {
 
 
             // todo detach from parent - makes errors
+
+        })
+
+        describe('ValidationResultAsAComment', () => {
+            // Note the use of `beforeEach`
+            beforeEach(() => {
+                cy.loadStory(STORY, 'ValidationResultAsAComment')
+            })
+
+            it.only('Invalid cell', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.matchImageSnapshot();
+            })
+
+            it.only('Invalid cell after update', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td','4.5')
+                    .dblclick();
+
+                cy.get('textarea:first').type('{selectall}{del}5,{enter}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it.only('Valid cell after update', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                cy.get('.htCore > tbody')
+                    .contains('td','4,')
+                    .dblclick();
+
+                cy.get('textarea:first').type('{selectall}{del}5.5{enter}');
+
+                cy.matchImageSnapshot();
+            })
+
 
         })
 

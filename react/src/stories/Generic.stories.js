@@ -23,6 +23,7 @@ export const CustomRendererExample = mapConfigToStory(configurations.CustomRende
 export const StandardContextMenu = mapConfigToStory(configurations.StandardContextMenu);
 export const NestedRows = mapConfigToStory(configurations.NestedRows);
 export const ButtonRendererWithAction = mapConfigToStory(configurations.ButtonRendererWithAction);
+export const ValidationResultAsAComment = mapConfigToStory(configurations.ValidationResultAsAComment);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -32,3 +33,4 @@ export const HfCustomRendererExample = mapConfigToStory({...configurations.Custo
 export const HfStandardContextMenu = mapConfigToStory({...configurations.StandardContextMenu, ...formulas});
 export const HfNestedRows = mapConfigToStory({...configurations.NestedRows, ...formulas});
 export const HfButtonRendererWithAction = mapConfigToStory({...configurations.ButtonRendererWithAction, ...formulas});
+export const HfValidationResultAsAComment = mapConfigToStory({...configurations.ValidationResultAsAComment, ...formulas});
