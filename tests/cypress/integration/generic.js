@@ -514,5 +514,29 @@ export default () => {
             // todo detach from parent - makes errors
 
         })
+
+        describe('ButtonRendererWithAction', () => {
+            // Note the use of `beforeEach`
+            beforeEach(() => {
+                cy.loadStory(STORY, 'ButtonRendererWithAction')
+            })
+
+            it.only('Click a button', () => {
+                cy.get('body').click() // without that does not render HOT. ??!
+
+                // detach
+                cy.get('.htCore > tbody')
+                    .contains('button', '8')
+                    .click();
+
+                cy.matchImageSnapshot();
+            })
+
+
+            // todo detach from parent - makes errors
+
+        })
+
+
     })
 }

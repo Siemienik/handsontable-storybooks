@@ -188,5 +188,29 @@ configurations.NestedRows = {
     nestedRows: true,
     contextMenu: true,
 }
+configurations.ButtonRendererWithAction = {
+    data: [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ],
+    licenseKey: 'non-commercial-and-evaluation',
+    colWidths: 100,
+    colHeaders: true,
+    cells(row, col) {
+        const cellPrp = {};
+
+        if (col === 1) {
+            cellPrp.renderer = (instance, td, row, col, prop, value, cellProperties) => {
+                Handsontable.renderers.TextRenderer.apply(this, [instance, td, row, col, prop, value, cellProperties]);
+
+                td.innerHTML = `<button class="myBt bt-${row}" onclick="this.innerHTML='clicked'">${value}</button>`;
+            };
+            cellPrp.readOnly = true;
+        }
+
+        return cellPrp
+    }
+}
 
 export default configurations;
