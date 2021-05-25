@@ -268,13 +268,13 @@ configurations.ValidationAndDropDown = {
             ownersByYear: {2013: 'John Smith', 2014: 'Micheal Pattinson', 2015: 'Andrew Sanchez'},
             owner: 'John Smith',
             cleared: false
-        },
+        }
     ],
-        licenseKey: 'non-commercial-and-evaluation',
-        colHeaders: true,
-        colWidths: [100, 170, 250],
-        fillHandle: false,
-        columns: [
+    licenseKey: 'non-commercial-and-evaluation',
+    colHeaders: true,
+    colWidths: [100, 170, 250],
+    fillHandle: false,
+    columns: [
         {
             data: 'car',
             title: 'Car Model',
@@ -292,7 +292,7 @@ configurations.ValidationAndDropDown = {
             source: ['John Smith', 'James Anthon', 'Andrew Sanchez', 'Micheal Pattinson'],
         }
     ],
-        afterInit(){
+    afterInit(){
         window.OPTIONS = new Map([
             ['2015', () => ['Jack', 'Bob', 'Same']],
             ['2016', () => ['WW', 'Saddy', 'Caven']],
@@ -339,6 +339,37 @@ configurations.AutoColumnSizeDisabled = {
     colHeaders: true,
     rowHeaders: true,
     licenseKey: "non-commercial-and-evaluation",
+};
+configurations.NestedHeaders = {
+    data: Handsontable.helper.createSpreadsheetData(5,10),
+    colHeaders: true,
+    rowHeaders: true,
+    nestedHeaders: [
+        ['A', {label: 'B', colspan: 9}],
+        ['D', {label: 'E', colspan: 4}, {label: 'F', colspan: 4}, 'G'],
+        ['H', {label: 'I', colspan: 2}, {label: 'J', colspan: 2}, {label: 'K', colspan: 2}, {label: 'L', colspan: 2}, 'M'],
+        ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W']
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
+configurations.CollapsibleColumns = {
+    data: Handsontable.helper.createSpreadsheetData(5,11),
+    colHeaders: true,
+    rowHeaders: true,
+    colWidths: 60,
+    nestedHeaders: [
+        ['A', {label: 'B', colspan: 9}],
+        ['D', {label: 'E', colspan: 4}, {label: 'F', colspan: 4}, 'G'],
+        ['H',  'I1','I2', {label: 'J', colspan: 2}, {label: 'K', colspan: 2}, {label: 'L', colspan: 2}, 'M'],
+        ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W']
+    ],
+    collapsibleColumns: [
+        {row: -4, col: 1, collapsible: true},
+        {row: -3, col: 1, collapsible: true},
+        {row: -2, col: 1, collapsible: true},
+        {row: -2, col: 3, collapsible: true}
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
 };
 
 export default configurations;

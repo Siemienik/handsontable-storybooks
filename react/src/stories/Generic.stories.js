@@ -28,6 +28,8 @@ export const ValidationAndDropDown = mapConfigToStory(configurations.ValidationA
 export const AutoColumnSizeDefault = mapConfigToStory(configurations.AutoColumnSizeDefault);
 export const AutoColumnSizeEnabled = mapConfigToStory(configurations.AutoColumnSizeEnabled);
 export const AutoColumnSizeDisabled = mapConfigToStory(configurations.AutoColumnSizeDisabled);
+export const NestedHeaders = mapConfigToStory(configurations.NestedHeaders);
+export const CollapsibleColumns = mapConfigToStory(configurations.CollapsibleColumns);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -42,3 +44,5 @@ export const HfValidationAndDropDown = mapConfigToStory({...configurations.Valid
 export const HfAutoColumnSizeDefault = mapConfigToStory({...configurations.AutoColumnSizeDefault, ...formulas});
 export const HfAutoColumnSizeEnabled = mapConfigToStory({...configurations.AutoColumnSizeEnabled, ...formulas});
 export const HfAutoColumnSizeDisabled = mapConfigToStory({...configurations.AutoColumnSizeDisabled, ...formulas});
+export const HfNestedHeaders = mapConfigToStory({...configurations.NestedHeaders, ...formulas});
+export const HfCollapsibleColumns = mapConfigToStory({...configurations.CollapsibleColumns, ...formulas});
