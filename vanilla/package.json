@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "start-storybook -p 6010",
-    "build": "build-storybook",
-    "cy": "cypress open"
+    "build": "build-storybook"
   },
   "keywords": [],
   "author": "",
