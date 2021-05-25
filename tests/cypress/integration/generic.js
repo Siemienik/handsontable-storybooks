@@ -1,4 +1,4 @@
-export default () => {
+export default (prefix='') => {
     beforeEach(() => {
         cy.visitStorybook()
     })
@@ -8,7 +8,7 @@ export default () => {
         describe('JustATable', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'JustATable')
+                cy.loadStory(STORY, prefix+'JustATable')
             })
             it('Type a formula `=1+2` into A1', () => {
                 cy.hOpenEditor('A1')
@@ -22,7 +22,8 @@ export default () => {
         describe('CustomContextMenu', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'CustomContextMenu')
+                cy.loadStory(STORY, prefix+'CustomContextMenu')
+
             })
 
             it('Add row above', () => {
@@ -78,7 +79,8 @@ export default () => {
         describe('StandardContextMenu', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'StandardContextMenu')
+                cy.loadStory(STORY, prefix+'StandardContextMenu')
+
             })
             it('Add rows above', () => {
                 // first
@@ -356,7 +358,8 @@ export default () => {
         describe('NestedRows', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'NestedRows')
+                cy.loadStory(STORY, prefix+'NestedRows')
+
             })
 
             it('Collapse two rows', () => {
@@ -460,7 +463,8 @@ export default () => {
         describe('ButtonRendererWithAction', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'ButtonRendererWithAction')
+                cy.loadStory(STORY, prefix+'ButtonRendererWithAction')
+
             })
 
             it('Click a button', () => {
@@ -480,7 +484,8 @@ export default () => {
         describe('ValidationResultAsAComment', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'ValidationResultAsAComment')
+                cy.loadStory(STORY, prefix+'ValidationResultAsAComment')
+
             })
 
             it('Invalid cell', () => {
@@ -509,7 +514,8 @@ export default () => {
         describe('ValidationAndDropDown', () => {
             // Note the use of `beforeEach`
             beforeEach(() => {
-                cy.loadStory(STORY, 'ValidationAndDropDown')
+                cy.loadStory(STORY, prefix+'ValidationAndDropDown')
+
             })
 
             it('Change to invalid year', () => {

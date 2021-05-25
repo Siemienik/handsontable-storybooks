@@ -3,6 +3,10 @@
 import genericSpecs from './generic'
 
 describe('Vue',{baseUrl:'http://localhost:6009/'},  ()=>{
-    genericSpecs();
-})
+    describe('Without HyperFormula', ()=>{
+        genericSpecs();
+    })
+    describe('With HyperFormula', ()=>{
+        genericSpecs('Hf');
+    })})
 
