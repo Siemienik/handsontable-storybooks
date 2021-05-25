@@ -33,6 +33,9 @@ export const NestedRows = mapConfigToStory(configurations.NestedRows);
 export const ButtonRendererWithAction = mapConfigToStory(configurations.ButtonRendererWithAction);
 export const ValidationResultAsAComment = mapConfigToStory(configurations.ValidationResultAsAComment);
 export const ValidationAndDropDown = mapConfigToStory(configurations.ValidationAndDropDown);
+export const AutoColumnSizeDefault = mapConfigToStory(configurations.AutoColumnSizeDefault);
+export const AutoColumnSizeEnabled = mapConfigToStory(configurations.AutoColumnSizeEnabled);
+export const AutoColumnSizeDisabled = mapConfigToStory(configurations.AutoColumnSizeDisabled);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -44,3 +47,6 @@ export const HfNestedRows = mapConfigToStory({...configurations.NestedRows, ...f
 export const HfButtonRendererWithAction = mapConfigToStory({...configurations.ButtonRendererWithAction, ...formulas});
 export const HfValidationResultAsAComment = mapConfigToStory({...configurations.ValidationResultAsAComment, ...formulas});
 export const HfValidationAndDropDown = mapConfigToStory({...configurations.ValidationAndDropDown, ...formulas});
+export const HfAutoColumnSizeDefault = mapConfigToStory({...configurations.AutoColumnSizeDefault, ...formulas});
+export const HfAutoColumnSizeEnabled = mapConfigToStory({...configurations.AutoColumnSizeEnabled, ...formulas});
+export const HfAutoColumnSizeDisabled = mapConfigToStory({...configurations.AutoColumnSizeDisabled, ...formulas});

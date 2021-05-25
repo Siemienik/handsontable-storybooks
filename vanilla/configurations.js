@@ -319,6 +319,26 @@ configurations.ValidationAndDropDown = {
         this.setDataAtRowProp(row, 'owner', option[0]);
     }
 }
+configurations.AutoColumnSizeDefault = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    colHeaders: true,
+    rowHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
+configurations.AutoColumnSizeEnabled = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    autoColumnSize: true,
+    colHeaders: true,
+    rowHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
+configurations.AutoColumnSizeDisabled = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    autoColumnSize: false,
+    colHeaders: true,
+    rowHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
 
 export default configurations
 
