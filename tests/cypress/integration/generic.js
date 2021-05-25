@@ -563,6 +563,7 @@ export default (prefix='') => {
                 it('Type long text', () => {
                     cy.hOpenEditor('A1')
                     cy.get('textarea:first').type('{selectall}{del}Lorem ipsum dolor sit amet, {enter}');
+                    cy.wait(500);
                     cy.get('div.handsontable:first').matchImageSnapshot();
                 })
 
@@ -570,6 +571,7 @@ export default (prefix='') => {
                 it('Type formula with long result ', () => {
                     cy.hOpenEditor('A1')
                     cy.get('textarea:first').type('{selectall}{del}=999*999*999{enter}');
+                    cy.wait(500);
                     cy.get('div.handsontable:first').matchImageSnapshot();
                 })
 
@@ -585,6 +587,7 @@ export default (prefix='') => {
                 it('Type long text', () => {
                     cy.hOpenEditor('A1')
                     cy.get('textarea:first').type('{selectall}{del}Lorem ipsum dolor sit amet, {enter}');
+                    cy.wait(500);
                     cy.get('div.handsontable:first').matchImageSnapshot();
                 })
 
@@ -592,6 +595,7 @@ export default (prefix='') => {
                 it('Type formula with long result ', () => {
                     cy.hOpenEditor('A1')
                     cy.get('textarea:first').type('{selectall}{del}=999*999*999{enter}');
+                    cy.wait(500);
                     cy.get('div.handsontable:first').matchImageSnapshot();
                 })
 
@@ -607,6 +611,7 @@ export default (prefix='') => {
                 it('Type long text', () => {
                     cy.hOpenEditor('A1')
                     cy.get('textarea:first').type('{selectall}{del}Lorem ipsum dolor sit amet, {enter}');
+                    cy.wait(500);
                     cy.get('div.handsontable:first').matchImageSnapshot();
                 })
 
@@ -614,6 +619,7 @@ export default (prefix='') => {
                 it('Type formula with long result ', () => {
                     cy.hOpenEditor('A1')
                     cy.get('textarea:first').type('{selectall}{del}=999*999*999{enter}');
+                    cy.wait(500);
                     cy.get('div.handsontable:first').matchImageSnapshot();
                 })
 
