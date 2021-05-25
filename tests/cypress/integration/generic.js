@@ -11,10 +11,7 @@ export default () => {
                 cy.loadStory(STORY, 'JustATable')
             })
             it('Type a formula `=1+2` into A1', () => {
-                cy.get('.htCore > tbody')
-                    .get('tr:first')
-                    .get('td:first')
-                    .dblclick();
+                cy.hOpenEditor('A1')
 
                 cy.get('textarea:first').type('{selectall}{del}=1+2{enter}');
 
@@ -491,9 +488,7 @@ export default () => {
             })
 
             it('Invalid cell after update', () => {
-                cy.get('.htCore > tbody')
-                    .contains('td','4.5')
-                    .dblclick();
+                cy.hOpenEditor('4.5')
 
                 cy.get('textarea:first').type('{selectall}{del}5,{enter}');
 
@@ -501,9 +496,7 @@ export default () => {
             })
 
             it('Valid cell after update', () => {
-                cy.get('.htCore > tbody')
-                    .contains('td','4,')
-                    .dblclick();
+                cy.hOpenEditor('4,')
 
                 cy.get('textarea:first').type('{selectall}{del}5.5{enter}');
 
@@ -520,9 +513,7 @@ export default () => {
             })
 
             it('Change to invalid year', () => {
-                cy.get('.htCore > tbody')
-                    .contains('td','2014')
-                    .dblclick();
+                cy.hOpenEditor('2014')
 
                 cy.get('textarea:first').type('{selectall}{del}2014s{enter}');
 
@@ -530,9 +521,7 @@ export default () => {
             })
 
             it('Change to invalid owner', () => {
-                cy.get('.htCore > tbody')
-                    .contains('td','John Smith')
-                    .dblclick();
+                cy.hOpenEditor('John Smith')
 
                 cy.get('textarea:first').type('{selectall}{del}John Sith{enter}');
 
@@ -540,9 +529,7 @@ export default () => {
             })
 
             it('Change year causes changed name', () => {
-                cy.get('.htCore > tbody')
-                    .contains('td','2014')
-                    .dblclick();
+                cy.hOpenEditor('2014')
 
                 cy.get('textarea:first').type('{selectall}{del}2015{enter}');
 
@@ -550,9 +537,7 @@ export default () => {
             })
 
             it('Change owner doesn\'t causes changed year', () => {
-                cy.get('.htCore > tbody')
-                    .contains('td','James Anthon')
-                    .dblclick();
+                cy.hOpenEditor('James Anthon')
 
                 cy.get('textarea:first').type('{selectall}{del}Andrew Sanchez{enter}');
 
