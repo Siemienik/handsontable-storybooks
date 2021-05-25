@@ -3,6 +3,10 @@
 import genericSpecs from './generic'
 
 describe('React',{baseUrl:'http://localhost:6011/'},  ()=>{
-    genericSpecs();
-})
+    describe('Without HyperFormula', ()=>{
+        genericSpecs();
+    })
+    describe('With HyperFormula', ()=>{
+        genericSpecs('Hf');
+    })})
 
