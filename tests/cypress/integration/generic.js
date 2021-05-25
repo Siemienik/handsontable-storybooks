@@ -1,3 +1,5 @@
+import configurations from "../../../vanilla/configurations";
+
 export default (prefix='') => {
     beforeEach(() => {
         cy.visitStorybook()
@@ -512,7 +514,6 @@ export default (prefix='') => {
         })
 
         describe('ValidationAndDropDown', () => {
-            // Note the use of `beforeEach`
             beforeEach(() => {
                 cy.loadStory(STORY, prefix+'ValidationAndDropDown')
 
@@ -550,6 +551,79 @@ export default (prefix='') => {
                 cy.matchImageSnapshot();
             })
 
+        })
+
+        describe.only('AutoColumnSize', ()=>{
+            describe('default options',()=>{
+
+                beforeEach(() => {
+                    cy.loadStory(STORY, prefix+'AutoColumnSizeDefault')
+                })
+
+                it('Type long text', () => {
+                    cy.hOpenEditor('A1')
+                    cy.get('textarea:first').type('{selectall}{del}Lorem ipsum dolor sit amet, {enter}');
+                    cy.wait(500);
+                    cy.get('div.handsontable:first').matchImageSnapshot();
+                })
+
+
+                it('Type formula with long result ', () => {
+                    cy.hOpenEditor('A1')
+                    cy.get('textarea:first').type('{selectall}{del}=999*999*999{enter}');
+                    cy.wait(500);
+                    cy.get('div.handsontable:first').matchImageSnapshot();
+                })
+
+            })
+
+            describe('enabled',()=>{
+
+                beforeEach(() => {
+                    cy.loadStory(STORY, prefix+'AutoColumnSizeEnabled')
+
+                })
+
+                it('Type long text', () => {
+                    cy.hOpenEditor('A1')
+                    cy.get('textarea:first').type('{selectall}{del}Lorem ipsum dolor sit amet, {enter}');
+                    cy.wait(500);
+                    cy.get('div.handsontable:first').matchImageSnapshot();
+                })
+
+
+                it('Type formula with long result ', () => {
+                    cy.hOpenEditor('A1')
+                    cy.get('textarea:first').type('{selectall}{del}=999*999*999{enter}');
+                    cy.wait(500);
+                    cy.get('div.handsontable:first').matchImageSnapshot();
+                })
+
+            })
+
+            describe('disabled',()=>{
+
+                beforeEach(() => {
+                    cy.loadStory(STORY, prefix+'AutoColumnSizeDisabled')
+
+                })
+
+                it('Type long text', () => {
+                    cy.hOpenEditor('A1')
+                    cy.get('textarea:first').type('{selectall}{del}Lorem ipsum dolor sit amet, {enter}');
+                    cy.wait(500);
+                    cy.get('div.handsontable:first').matchImageSnapshot();
+                })
+
+
+                it('Type formula with long result ', () => {
+                    cy.hOpenEditor('A1')
+                    cy.get('textarea:first').type('{selectall}{del}=999*999*999{enter}');
+                    cy.wait(500);
+                    cy.get('div.handsontable:first').matchImageSnapshot();
+                })
+
+            })
         })
 
     })

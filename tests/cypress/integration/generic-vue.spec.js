@@ -8,5 +8,6 @@ describe('Vue',{baseUrl:'http://localhost:6009/'},  ()=>{
     })
     describe('With HyperFormula', ()=>{
         genericSpecs('Hf');
-    })})
+    })
+})
 

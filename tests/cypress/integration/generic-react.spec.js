@@ -8,5 +8,6 @@ describe('React',{baseUrl:'http://localhost:6011/'},  ()=>{
     })
     describe('With HyperFormula', ()=>{
         genericSpecs('Hf');
-    })})
+    })
+})
 
