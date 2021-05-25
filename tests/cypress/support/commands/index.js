@@ -12,4 +12,4 @@ import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 import addOpenEditor from './hOpenEditor';
 
 addMatchImageSnapshotCommand();
-addOpenEditor();
+addOpenEditor(Cypress);
