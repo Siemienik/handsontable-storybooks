@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "start-storybook -p 6008",
-    "build": "build-storybook",
-    "cy": "cypress open"
+    "build": "build-storybook"
   },
   "private": true,
   "dependencies": {

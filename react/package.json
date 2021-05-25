@@ -32,8 +32,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 6011",
-    "build": "build-storybook",
-    "cy": "cypress open"
+    "build": "build-storybook"
   },
   "eslintConfig": {
     "extends": [

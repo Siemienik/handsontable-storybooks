@@ -47,8 +47,7 @@ npm run start
 
 ## TODO:
 
-* [ ] Define cypress commands: getCellByValue, snapshotHot, openContextMenu, selectContextMenuItem,
-* [ ] https://storybook.js.org/addons/storycap where cypress is redundant
-* [ ] plugin cypress for vue
-* [ ] (react) resolve problem with importing outside src
+* [ ] Define cypress commands: hGetCell(), hSnapshot, hOpenContextMenu, hSelectContextMenuItem,
 * [ ] Describe, how tests are located, what is generic and specific
+* [ ] Write an instruction how to use this tool
+* [ ] Allow react project to import configuration.js from vanilla
