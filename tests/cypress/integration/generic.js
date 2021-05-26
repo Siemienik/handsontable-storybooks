@@ -626,6 +626,120 @@ export default (prefix='') => {
             })
         })
 
+        describe('NestedHeaders', ()=>{
+            beforeEach(() => {
+                cy.loadStory(STORY, prefix+'NestedHeaders')
+            })
+
+            it('Check nested headers + header highlight', () => {
+                cy.get('.htCore > tbody')
+                    .contains('td','E3')
+                    .click()
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+        })
+
+        describe('CollapsibleColumns', ()=>{
+            beforeEach(() => {
+                cy.loadStory(STORY, prefix+'CollapsibleColumns')
+            })
+
+            it('Collapse B', ()=>{
+                cy.contains('th','B')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+            it('Collapse E', ()=>{
+                cy.contains('th','E')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+            it('Collapse J', ()=>{
+                cy.contains('th','J')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+            it('Collapse B, then J, then E', ()=>{
+                // B
+                cy.contains('th','B')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // J
+                cy.contains('th','J')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // E
+                cy.contains('th','E')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+            it('Collapse B, then J, then E, then expand E', ()=>{
+                // B
+                cy.contains('th','B')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // J
+                cy.contains('th','J')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // E
+                cy.contains('th','E')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // expand E
+                cy.contains('th','E')
+                    .find('.collapsibleIndicator.collapsed:first')
+                    .click({force: true})
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+
+            it('Collapse B, then J, then E, then expand B', ()=>{
+                // B
+                cy.contains('th','B')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // J
+                cy.contains('th','J')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // E
+                cy.contains('th','E')
+                    .find('.collapsibleIndicator.expanded:first')
+                    .click({force: true})
+
+                // expand B
+                cy.contains('th','B')
+                    .find('.collapsibleIndicator.collapsed:first')
+                    .click({force: true})
+
+                cy.get('div.handsontable:first').matchImageSnapshot();
+            })
+
+        })
+
         describe.only('UndoRedo', () => {
             beforeEach(() => {
                 cy.loadStory(STORY, prefix+'UndoRedo');

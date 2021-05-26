@@ -339,12 +339,44 @@ configurations.AutoColumnSizeDisabled = {
     rowHeaders: true,
     licenseKey: "non-commercial-and-evaluation",
 };
+configurations.NestedHeaders = {
+    data: Handsontable.helper.createSpreadsheetData(5,10),
+    colHeaders: true,
+    rowHeaders: true,
+    nestedHeaders: [
+        ['A', {label: 'B', colspan: 9}],
+        ['D', {label: 'E', colspan: 4}, {label: 'F', colspan: 4}, 'G'],
+        ['H', {label: 'I', colspan: 2}, {label: 'J', colspan: 2}, {label: 'K', colspan: 2}, {label: 'L', colspan: 2}, 'M'],
+        ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W']
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
+configurations.CollapsibleColumns = {
+    data: Handsontable.helper.createSpreadsheetData(5,11),
+    colHeaders: true,
+    rowHeaders: true,
+    colWidths: 60,
+    nestedHeaders: [
+        ['A', {label: 'B', colspan: 9}],
+        ['D', {label: 'E', colspan: 4}, {label: 'F', colspan: 4}, 'G'],
+        ['H',  'I1','I2', {label: 'J', colspan: 2}, {label: 'K', colspan: 2}, {label: 'L', colspan: 2}, 'M'],
+        ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W']
+    ],
+    collapsibleColumns: [
+        {row: -4, col: 1, collapsible: true},
+        {row: -3, col: 1, collapsible: true},
+        {row: -2, col: 1, collapsible: true},
+        {row: -2, col: 3, collapsible: true}
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
 configurations.UndoRedo = {
     data: Handsontable.helper.createSpreadsheetData(4, 4),
     rowHeaders: true,
     colHeaders: true,
     licenseKey: "non-commercial-and-evaluation",
 }
+
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
