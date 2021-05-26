@@ -742,7 +742,7 @@ export default (prefix='') => {
 
         describe.only('UndoRedo', () => {
             beforeEach(() => {
-                cy.loadStory(STORY, prefix+'UndoRedo');
+                cy.loadStory(STORY, prefix+'JustATable');
             })
 
             it('undo change in a cell', async() => {

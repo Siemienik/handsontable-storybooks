@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "shot:angular": "storycap http://localhost:6008 -o angular -V 450x200 --delay 500",
-    "shot:react": "storycap http://localhost:6011 -o react -V 450x200 --delay 500",
-    "shot:vanilla": "storycap http://localhost:6010 -o vanilla -V 450x200 --delay 500",
-    "shot:vue": "storycap http://localhost:6009 -o vue -V 450x200 --delay 500",
+    "shot:angular": "storycap http://localhost:6008 -o angular -V 450x200 --delay 1000",
+    "shot:react": "storycap http://localhost:6011 -o react -V 450x200 --delay 1000",
+    "shot:vanilla": "storycap http://localhost:6010 -o vanilla -V 450x200 --delay 1000",
+    "shot:vue": "storycap http://localhost:6009 -o vue -V 450x200 --delay 1000",
     "shot-all": "npm run shot:angular & npm run shot:react & npm run shot:vanilla & npm run shot:vue"
   },
   "author": "",

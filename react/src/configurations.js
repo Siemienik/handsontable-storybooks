@@ -394,6 +394,31 @@ configurations.ColumnSummary = {
     },
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.CustomBorders = {
+    data: Handsontable.helper.createSpreadsheetData(5, 6),
+    rowHeaders: true,
+    colHeaders: true,
+    stretchH: 'all',
+    customBorders: [
+        {
+            range: {
+                from: { row: 1,  col: 1 },
+                to: { row: 3,  col: 4 }
+            },
+            top: { width: 2,  color: '#5292F7' },
+            left: { width: 2,  color: 'orange' },
+            bottom: { width: 2,  color: 'red' },
+            right: { width: 2,  color: 'magenta' }
+        },
+        {
+            row: 2,
+            col: 2,
+            left: { width: 2,  color: 'red' },
+            right: { width: 1,  color: 'green' }
+        }
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
 
 export default configurations;
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
