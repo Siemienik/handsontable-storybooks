@@ -28,15 +28,12 @@ export const ValidationAndDropDown = mapConfigToStory(configurations.ValidationA
 export const AutoColumnSizeDefault = mapConfigToStory(configurations.AutoColumnSizeDefault);
 export const AutoColumnSizeEnabled = mapConfigToStory(configurations.AutoColumnSizeEnabled);
 export const AutoColumnSizeDisabled = mapConfigToStory(configurations.AutoColumnSizeDisabled);
-<<<<<<< HEAD
 export const UndoRedo = mapConfigToStory(configurations.UndoRedo);
 export const UndoRedoContextMenu = mapConfigToStory(configurations.UndoRedoContextMenu);
-=======
 export const NestedHeaders = mapConfigToStory(configurations.NestedHeaders);
 export const CollapsibleColumns = mapConfigToStory(configurations.CollapsibleColumns);
 export const ColumnSummary = mapConfigToStory(configurations.ColumnSummary);
 export const CustomBorders = mapConfigToStory(configurations.CustomBorders);
->>>>>>> master
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -51,12 +48,9 @@ export const HfValidationAndDropDown = mapConfigToStory({...configurations.Valid
 export const HfAutoColumnSizeDefault = mapConfigToStory({...configurations.AutoColumnSizeDefault, ...formulas});
 export const HfAutoColumnSizeEnabled = mapConfigToStory({...configurations.AutoColumnSizeEnabled, ...formulas});
 export const HfAutoColumnSizeDisabled = mapConfigToStory({...configurations.AutoColumnSizeDisabled, ...formulas});
-<<<<<<< HEAD
 export const HfUndoRedo = mapConfigToStory({...configurations.UndoRedo, ...formulas});
 export const HfUndoRedoContextMenu = mapConfigToStory({...configurations.UndoRedoContextMenu, ...formulas});
-=======
 export const HfNestedHeaders = mapConfigToStory({...configurations.NestedHeaders, ...formulas});
 export const HfCollapsibleColumns = mapConfigToStory({...configurations.CollapsibleColumns, ...formulas});
 export const HfColumnSummary = mapConfigToStory({...configurations.ColumnSummary, ...formulas});
 export const HfCustomBorders = mapConfigToStory({...configurations.CustomBorders, ...formulas});
->>>>>>> master
