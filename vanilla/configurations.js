@@ -370,6 +370,29 @@ configurations.CollapsibleColumns = {
     ],
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.ColumnSummary = {
+    data: [
+        [null,null,null,null,null],
+        [1,1,2,3,5],
+        [8,13,21,34,55],
+        [89,144,233,377,610],
+        [89.1,144.1,233.2,377.3,610.5],
+        [81,131,212,343,555]
+    ],
+    rowHeaders: true,
+    colHeaders: ['sum', 'min', 'max', 'count', 'average'],
+    columnSummary() {
+        return ['sum', 'min', 'max', 'count', 'average']
+            .map((t,i)=>({
+                sourceColumn: i,
+                destinationRow: 0,
+                destinationColumn: i,
+                type: t,
+                forceNumeric: true
+            }));
+    },
+    licenseKey: 'non-commercial-and-evaluation'
+};
 
 export default configurations
 
