@@ -32,6 +32,7 @@ export const AutoColumnSizeDefault = mapConfigToStory(configurations.AutoColumnS
 export const AutoColumnSizeEnabled = mapConfigToStory(configurations.AutoColumnSizeEnabled);
 export const AutoColumnSizeDisabled = mapConfigToStory(configurations.AutoColumnSizeDisabled);
 export const UndoRedo = mapConfigToStory(configurations.UndoRedo);
+export const UndoRedoContextMenu = mapConfigToStory(configurations.UndoRedoContextMenu);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -47,3 +48,4 @@ export const HfAutoColumnSizeDefault = mapConfigToStory({...configurations.AutoC
 export const HfAutoColumnSizeEnabled = mapConfigToStory({...configurations.AutoColumnSizeEnabled, ...formulas});
 export const HfAutoColumnSizeDisabled = mapConfigToStory({...configurations.AutoColumnSizeDisabled, ...formulas});
 export const HfUndoRedo = mapConfigToStory({...configurations.UndoRedo, ...formulas});
+export const HfUndoRedoContextMenu = mapConfigToStory({...configurations.UndoRedoContextMenu, ...formulas});
