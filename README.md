@@ -51,3 +51,5 @@ npm run start
 * [ ] Describe, how tests are located, what is generic and specific
 * [ ] Write an instruction how to use this tool
 * [ ] Allow react project to import configuration.js from vanilla
+
+* [ ] AutoFill - check possibility to test it

@@ -268,13 +268,13 @@ configurations.ValidationAndDropDown = {
             ownersByYear: {2013: 'John Smith', 2014: 'Micheal Pattinson', 2015: 'Andrew Sanchez'},
             owner: 'John Smith',
             cleared: false
-        },
+        }
     ],
-        licenseKey: 'non-commercial-and-evaluation',
-        colHeaders: true,
-        colWidths: [100, 170, 250],
-        fillHandle: false,
-        columns: [
+    licenseKey: 'non-commercial-and-evaluation',
+    colHeaders: true,
+    colWidths: [100, 170, 250],
+    fillHandle: false,
+    columns: [
         {
             data: 'car',
             title: 'Car Model',
@@ -292,7 +292,7 @@ configurations.ValidationAndDropDown = {
             source: ['John Smith', 'James Anthon', 'Andrew Sanchez', 'Micheal Pattinson'],
         }
     ],
-        afterInit(){
+    afterInit(){
         window.OPTIONS = new Map([
             ['2015', () => ['Jack', 'Bob', 'Same']],
             ['2016', () => ['WW', 'Saddy', 'Caven']],
@@ -352,6 +352,85 @@ configurations.UndoRedoContextMenu = {
     colHeaders: true,
     contextMenu: true,
     licenseKey: "non-commercial-and-evaluation",
+};
+configurations.NestedHeaders = {
+    data: Handsontable.helper.createSpreadsheetData(5,10),
+    colHeaders: true,
+    rowHeaders: true,
+    nestedHeaders: [
+        ['A', {label: 'B', colspan: 9}],
+        ['D', {label: 'E', colspan: 4}, {label: 'F', colspan: 4}, 'G'],
+        ['H', {label: 'I', colspan: 2}, {label: 'J', colspan: 2}, {label: 'K', colspan: 2}, {label: 'L', colspan: 2}, 'M'],
+        ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W']
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
+configurations.CollapsibleColumns = {
+    data: Handsontable.helper.createSpreadsheetData(5,11),
+    colHeaders: true,
+    rowHeaders: true,
+    colWidths: 60,
+    nestedHeaders: [
+        ['A', {label: 'B', colspan: 9}],
+        ['D', {label: 'E', colspan: 4}, {label: 'F', colspan: 4}, 'G'],
+        ['H',  'I1','I2', {label: 'J', colspan: 2}, {label: 'K', colspan: 2}, {label: 'L', colspan: 2}, 'M'],
+        ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W']
+    ],
+    collapsibleColumns: [
+        {row: -4, col: 1, collapsible: true},
+        {row: -3, col: 1, collapsible: true},
+        {row: -2, col: 1, collapsible: true},
+        {row: -2, col: 3, collapsible: true}
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
+configurations.ColumnSummary = {
+    data: [
+        [null,null,null,null,null],
+        [1,1,2,3,5],
+        [8,13,21,34,55],
+        [89,144,233,377,610],
+        [89.1,144.1,233.2,377.3,610.5],
+        [81,131,212,343,555]
+    ],
+    rowHeaders: true,
+    colHeaders: ['sum', 'min', 'max', 'count', 'average'],
+    columnSummary() {
+        return ['sum', 'min', 'max', 'count', 'average']
+            .map((t,i)=>({
+                sourceColumn: i,
+                destinationRow: 0,
+                destinationColumn: i,
+                type: t,
+                forceNumeric: true
+            }));
+    },
+    licenseKey: 'non-commercial-and-evaluation'
+};
+configurations.CustomBorders = {
+    data: Handsontable.helper.createSpreadsheetData(5, 6),
+    rowHeaders: true,
+    colHeaders: true,
+    stretchH: 'all',
+    customBorders: [
+        {
+            range: {
+                from: { row: 1,  col: 1 },
+                to: { row: 3,  col: 4 }
+            },
+            top: { width: 2,  color: '#5292F7' },
+            left: { width: 2,  color: 'orange' },
+            bottom: { width: 2,  color: 'red' },
+            right: { width: 2,  color: 'magenta' }
+        },
+        {
+            row: 2,
+            col: 2,
+            left: { width: 2,  color: 'red' },
+            right: { width: 1,  color: 'green' }
+        }
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
 };
 
 export default configurations;
