@@ -648,7 +648,6 @@ export default (prefix='') => {
                 cy.get('body').type('{cmd+z}');
                 cy.get('body').type('{cmd+z}');
                 cy.get('body').type('{cmd+z}');
-                cy.get('body').type('{cmd+z}');
 
                 cy.matchImageSnapshot();
             })
@@ -673,11 +672,8 @@ export default (prefix='') => {
                 cy.get('body').type('{cmd+z}');
                 cy.get('body').type('{cmd+z}');
                 cy.get('body').type('{cmd+z}');
-                cy.get('body').type('{cmd+z}');
 
                 // redo
-                cy.get('body').type('{shift+cmd+z}');
-                cy.get('body').type('{shift+cmd+z}');
                 cy.get('body').type('{shift+cmd+z}');
                 cy.get('body').type('{shift+cmd+z}');
 
