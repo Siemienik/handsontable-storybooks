@@ -370,6 +370,12 @@ configurations.CollapsibleColumns = {
     ],
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.UndoRedo = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    rowHeaders: true,
+    colHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+}
 
 export default configurations
 

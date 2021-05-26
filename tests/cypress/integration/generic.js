@@ -740,5 +740,60 @@ export default (prefix='') => {
 
         })
 
+        describe.only('UndoRedo', () => {
+            beforeEach(() => {
+                cy.loadStory(STORY, prefix+'UndoRedo');
+            })
+
+            it('undo change in a cell', async() => {
+                cy.contains('A1').type('{selectall}{del}');
+                // undo
+                cy.get('body').type('{cmd+z}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it('undo change in a few cells', () => {
+                cy.contains('A1').type('{selectall}{del}');
+                cy.contains('B2').type('{selectall}{del}');
+                cy.contains('C3').type('{selectall}{del}');
+                cy.contains('D4').type('{selectall}{del}');
+
+                cy.get('body').type('{cmd+z}');
+                cy.get('body').type('{cmd+z}');
+                cy.get('body').type('{cmd+z}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it('undo and redo change in a cell', async() => {
+                cy.contains('A1').type('{selectall}{del}');
+                // undo
+                cy.get('body').type('{cmd+z}');
+                // redo
+                cy.get('body').type('{shift+cmd+z}');
+
+                cy.matchImageSnapshot();
+            })
+
+            it('undo and redo change in a few cells', () => {
+                cy.contains('A1').type('{selectall}{del}');
+                cy.contains('B2').type('{selectall}{del}');
+                cy.contains('C3').type('{selectall}{del}');
+                cy.contains('D4').type('{selectall}{del}');
+
+                // undo
+                cy.get('body').type('{cmd+z}');
+                cy.get('body').type('{cmd+z}');
+                cy.get('body').type('{cmd+z}');
+
+                // redo
+                cy.get('body').type('{shift+cmd+z}');
+                cy.get('body').type('{shift+cmd+z}');
+
+                cy.matchImageSnapshot();
+            })
+
+        })
     })
 }
