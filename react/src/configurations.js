@@ -340,6 +340,19 @@ configurations.AutoColumnSizeDisabled = {
     rowHeaders: true,
     licenseKey: "non-commercial-and-evaluation",
 };
+configurations.UndoRedo = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    rowHeaders: true,
+    colHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
+configurations.UndoRedoContextMenu = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    rowHeaders: true,
+    colHeaders: true,
+    contextMenu: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
 configurations.NestedHeaders = {
     data: Handsontable.helper.createSpreadsheetData(5,10),
     colHeaders: true,

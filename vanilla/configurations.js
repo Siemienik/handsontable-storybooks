@@ -418,7 +418,19 @@ configurations.CustomBorders = {
     ],
     licenseKey: 'non-commercial-and-evaluation'
 };
-
+configurations.UndoRedo = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    rowHeaders: true,
+    colHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
+configurations.UndoRedoContextMenu = {
+    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    rowHeaders: true,
+    colHeaders: true,
+    contextMenu: true,
+    licenseKey: "non-commercial-and-evaluation",
+};
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;

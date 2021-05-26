@@ -33,9 +33,9 @@ export default (prefix='') => {
                     .contains('td', 'B2')
                     .rightclick();
 
-                cy.contains('.htContextMenu .htItemWrapper', 'Insert row above this one (custom name)').click()
+                cy.contains('.htContextMenu .htItemWrapper', 'Insert row above this one (custom name)').click().click()
 
-                cy.get('div.handsontable:first').matchImageSnapshot();
+                cy.get('div.handsontable:first').matchImageSnapshot().click();
             })
 
             it('Add row below', () => {
@@ -745,8 +745,9 @@ export default (prefix='') => {
                 cy.loadStory(STORY, prefix+'JustATable');
             })
 
-            it('undo change in a cell', async() => {
+            it('undo change in a cell', () => {
                 cy.contains('A1').type('{selectall}{del}');
+                cy.contains('B2').type('{selectall}{del}');
                 // undo
                 cy.get('body').type('{cmd+z}');
 
@@ -766,7 +767,7 @@ export default (prefix='') => {
                 cy.matchImageSnapshot();
             })
 
-            it('undo and redo change in a cell', async() => {
+            it('undo and redo change in a cell', () => {
                 cy.contains('A1').type('{selectall}{del}');
                 // undo
                 cy.get('body').type('{cmd+z}');
@@ -790,6 +791,74 @@ export default (prefix='') => {
                 // redo
                 cy.get('body').type('{shift+cmd+z}');
                 cy.get('body').type('{shift+cmd+z}');
+
+                cy.matchImageSnapshot();
+            })
+
+        })
+
+        describe.only('UndoRedoContextMenu', () => {
+            beforeEach(() => {
+                cy.loadStory(STORY, prefix+'UndoRedoContextMenu');
+            })
+
+            it('undo change in a cell using the context menu', () => {
+                cy.contains('A1').type('{selectall}{del}');
+                cy.contains('B2').type('{selectall}{del}');
+                // undo
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+
+                cy.matchImageSnapshot();
+            })
+
+            it('undo change in a few cells using the context menu', () => {
+                cy.contains('A1').type('{selectall}{del}');
+                cy.contains('B2').type('{selectall}{del}');
+                cy.contains('C3').type('{selectall}{del}');
+                cy.contains('D4').type('{selectall}{del}');
+
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+
+                cy.matchImageSnapshot();
+            })
+
+            it('undo and redo change in a cell using the context menu', () => {
+                cy.contains('A1').type('{selectall}{del}');
+                // undo
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+                // redo
+                cy.contains('A4').rightclick();
+                cy.contains('Redo').click();
+
+                cy.matchImageSnapshot();
+            })
+
+            it('undo and redo change in a few cells using the context menu', () => {
+                cy.contains('A1').type('{selectall}{del}');
+                cy.contains('B2').type('{selectall}{del}');
+                cy.contains('C3').type('{selectall}{del}');
+                cy.contains('D4').type('{selectall}{del}');
+
+                // undo
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+                cy.contains('A4').rightclick();
+                cy.contains('Undo').click();
+
+                // redo
+                cy.contains('A4').rightclick();
+                cy.contains('Redo').click();
+                cy.contains('A4').rightclick();
+                cy.contains('Redo').click();
 
                 cy.matchImageSnapshot();
             })
