@@ -30,6 +30,7 @@ export const AutoColumnSizeEnabled = mapConfigToStory(configurations.AutoColumnS
 export const AutoColumnSizeDisabled = mapConfigToStory(configurations.AutoColumnSizeDisabled);
 export const NestedHeaders = mapConfigToStory(configurations.NestedHeaders);
 export const CollapsibleColumns = mapConfigToStory(configurations.CollapsibleColumns);
+export const ColumnSummary = mapConfigToStory(configurations.ColumnSummary);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -46,3 +47,4 @@ export const HfAutoColumnSizeEnabled = mapConfigToStory({...configurations.AutoC
 export const HfAutoColumnSizeDisabled = mapConfigToStory({...configurations.AutoColumnSizeDisabled, ...formulas});
 export const HfNestedHeaders = mapConfigToStory({...configurations.NestedHeaders, ...formulas});
 export const HfCollapsibleColumns = mapConfigToStory({...configurations.CollapsibleColumns, ...formulas});
+export const HfColumnSummary = mapConfigToStory({...configurations.ColumnSummary, ...formulas});
