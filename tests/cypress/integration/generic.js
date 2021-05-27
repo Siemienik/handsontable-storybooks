@@ -456,10 +456,6 @@ export default (prefix='') => {
 
                 cy.get('div.handsontable:first').matchImageSnapshot();
             })
-
-
-            // todo detach from parent - makes errors
-
         })
 
         describe('ButtonRendererWithAction', () => {
@@ -740,7 +736,7 @@ export default (prefix='') => {
 
         })
 
-        describe.only('UndoRedo', () => {
+        describe('UndoRedo', () => {
             beforeEach(() => {
                 cy.loadStory(STORY, prefix+'JustATable');
             })

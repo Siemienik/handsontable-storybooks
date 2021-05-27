@@ -7,9 +7,9 @@
     "build": "build-storybook"
   },
   "dependencies": {
-    "@handsontable/vue": "../lib/handsontable-vue-8.4.0.tgz",
+    "@handsontable/vue": "../lib/handsontable-vue-9.0.0.tgz",
     "core-js": "^3.6.5",
-    "handsontable": "../lib/handsontable-8.4.0.tgz",
+    "handsontable": "../lib/handsontable-9.0.0.tgz",
     "hyperformula": "^0.6.0",
     "numbro": "^2.1.2",
     "vue": "^2.6.11"

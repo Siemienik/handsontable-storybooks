@@ -24,7 +24,7 @@
     "cypress-storybook": "^0.5.1"
   },
   "dependencies": {
-    "handsontable": "../lib/handsontable-8.4.0.tgz",
+    "handsontable": "../lib/handsontable-9.0.0.tgz",
     "hyperformula": "^0.6.0",
     "numbro": "^2.3.2"
   }
