@@ -13,13 +13,35 @@ const Template = (args ) => {
   return createHot({ ...args });
 };
 
-const mapConfigToStory = (configuration) => {
+
+const mapConfigToStory = (configuration, options) => {
   const story = Template.bind({});
-  story.args = {settings: configuration};
+  story.args = {settings: configuration, ...options};
   return story;
 }
 
+export const RtlJustATable = mapConfigToStory(configurations.JustATable, {rtl: true});
+export const RtlFixedRowsBottom = mapConfigToStory(configurations.FixedRowsBottom, {rtl: true});
+export const RtlCustomContextMenu = mapConfigToStory(configurations.CustomContextMenu, {rtl: true});
+export const RtlCustomEditorExample = mapConfigToStory(configurations.CustomEditorExample, {rtl: true});
+export const RtlCustomRendererExample = mapConfigToStory(configurations.CustomRendererExample, {rtl: true});
+export const RtlStandardContextMenu = mapConfigToStory(configurations.StandardContextMenu, {rtl: true});
+export const RtlNestedRows = mapConfigToStory(configurations.NestedRows, {rtl: true});
+export const RtlButtonRendererWithAction = mapConfigToStory(configurations.ButtonRendererWithAction, {rtl: true});
+export const RtlValidationResultAsAComment = mapConfigToStory(configurations.ValidationResultAsAComment, {rtl: true});
+export const RtlValidationAndDropDown = mapConfigToStory(configurations.ValidationAndDropDown, {rtl: true});
+export const RtlAutoColumnSizeDefault = mapConfigToStory(configurations.AutoColumnSizeDefault, {rtl: true});
+export const RtlAutoColumnSizeEnabled = mapConfigToStory(configurations.AutoColumnSizeEnabled, {rtl: true});
+export const RtlAutoColumnSizeDisabled = mapConfigToStory(configurations.AutoColumnSizeDisabled, {rtl: true});
+export const RtlUndoRedo = mapConfigToStory(configurations.UndoRedo, {rtl: true});
+export const RtlUndoRedoContextMenu = mapConfigToStory(configurations.UndoRedoContextMenu, {rtl: true});
+export const RtlNestedHeaders = mapConfigToStory(configurations.NestedHeaders, {rtl: true});
+export const RtlCollapsibleColumns = mapConfigToStory(configurations.CollapsibleColumns, {rtl: true});
+export const RtlColumnSummary = mapConfigToStory(configurations.ColumnSummary, {rtl: true});
+export const RtlCustomBorders = mapConfigToStory(configurations.CustomBorders, {rtl: true});
+
 export const JustATable = mapConfigToStory(configurations.JustATable);
+export const FixedRowsBottom = mapConfigToStory(configurations.FixedRowsBottom);
 export const CustomContextMenu = mapConfigToStory(configurations.CustomContextMenu);
 export const CustomEditorExample = mapConfigToStory(configurations.CustomEditorExample);
 export const CustomRendererExample = mapConfigToStory(configurations.CustomRendererExample);
@@ -40,6 +62,7 @@ export const CustomBorders = mapConfigToStory(configurations.CustomBorders);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
+export const HfFixedRowsBottom = mapConfigToStory({...configurations.FixedRowsBottom, ...formulas});
 export const HfCustomContextMenu = mapConfigToStory({...configurations.CustomContextMenu, ...formulas});
 export const HfCustomEditorExample = mapConfigToStory({...configurations.CustomEditorExample, ...formulas});
 export const HfCustomRendererExample = mapConfigToStory({...configurations.CustomRendererExample, ...formulas});

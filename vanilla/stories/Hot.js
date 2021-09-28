@@ -3,7 +3,8 @@ import Handsontable from "handsontable";
 export const createHot = ({
     settings,
     callback = ()=>{},
-    css = ''
+    css = '',
+    rtl = false
 }) => {
 
   const style = document.createElement('style');
@@ -16,6 +17,10 @@ export const createHot = ({
 
   const wrapper = document.createElement('div');
   wrapper.append(style, container);
+
+  if(rtl){
+      wrapper.dir = 'rtl';
+  }
 
   setTimeout(()=>hot.render());
 

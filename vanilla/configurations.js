@@ -8,6 +8,13 @@ configurations.JustATable = {
     rowHeaders: true,
     licenseKey: "non-commercial-and-evaluation",
 };
+configurations.FixedRowsBottom = {
+    data: Handsontable.helper.createSpreadsheetData(60, 10),
+    colHeaders: true,
+    rowHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+    fixedRowsBottom: 1
+};
 configurations.CustomContextMenu = {
     data: Handsontable.helper.createSpreadsheetData(5, 5),
     colHeaders: true,
