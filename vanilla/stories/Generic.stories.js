@@ -16,7 +16,7 @@ const Template = (args ) => {
 
 const mapConfigToStory = (configuration, options) => {
   const story = Template.bind({});
-  story.args = {settings: configuration, ...options};
+  story.args = {settings: configuration, rtl:false, ...options};
   return story;
 }
 
