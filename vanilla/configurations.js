@@ -438,7 +438,13 @@ configurations.FixedRowsBottom = {
     licenseKey: "non-commercial-and-evaluation",
     fixedRowsBottom: 1
 };
-
+configurations.FixedRowsBottomWithHeaders = {
+    data: Handsontable.helper.createSpreadsheetData(60, 10),
+    colHeaders: true,
+    rowHeaders: true,
+    licenseKey: "non-commercial-and-evaluation",
+    fixedRowsBottom: 1
+};
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
