@@ -435,8 +435,6 @@ configurations.UndoRedoContextMenu = {
 // Added during RTL research and development
 configurations.FixedRowsBottom = {
     data: Handsontable.helper.createSpreadsheetData(60, 10),
-    colHeaders: true,
-    rowHeaders: true,
     licenseKey: "non-commercial-and-evaluation",
     fixedRowsBottom: 1
 };
