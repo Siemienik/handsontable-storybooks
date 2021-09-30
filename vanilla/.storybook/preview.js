@@ -21,6 +21,7 @@ window.__changeKnob = function (changedKnob) {
 // register needed languages
 numbro.registerLanguage(languages['ja-JP']);
 numbro.registerLanguage(languages['tr-TR']);
+numbro.registerLanguage(languages['de-DE']);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
