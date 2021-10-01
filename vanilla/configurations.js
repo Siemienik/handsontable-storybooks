@@ -525,6 +525,42 @@ configurations.CellTypeAutocomplete = {
         }
     ]
 };
+configurations.CellTypeCheckbox = {
+    data: [
+        { car: 'Mercedes A 160',  available: true, comesInBlack: 'yes' },
+        { car: 'Citroen C4 Coupe',  available: false, comesInBlack: 'yes' },
+        { car: 'Audi A4 Avant',  available: true, comesInBlack: 'no' },
+        { car: 'Opel Astra',  available: false, comesInBlack: 'yes' },
+        { car: 'BMW 320i Coupe',  available: false, comesInBlack: 'no' }
+    ],
+    colHeaders: ['Car model', 'Accepted (label after)', 'Comes in black (label before)'],
+    height: 'auto',
+    columns: [
+        {
+            data: 'car'
+        },
+        {
+            data: 'available',
+            type: 'checkbox',
+            label: {
+                position: 'after',
+                property: 'car' // Read value from row object
+            },
+        },
+        {
+            data: 'comesInBlack',
+            type: 'checkbox',
+            checkedTemplate: 'yes',
+            uncheckedTemplate: 'no',
+            label: {
+                position: 'before',
+                value: 'In black? '
+            },
+        },
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
+
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
