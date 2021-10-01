@@ -560,6 +560,37 @@ configurations.CellTypeCheckbox = {
     ],
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.CellTypeDate = {
+    licenseKey: 'non-commercial-and-evaluation',
+    data: [
+        ['01/14/2021'],
+        ['12/01/2022'],
+        ['11/19/2023'],
+        ['02/02/2021'],
+        ['07/24/2022']
+    ],
+    height: 'auto',
+    columns: [
+        {
+            type: 'date',
+            dateFormat: 'MM/DD/YYYY',
+            correctFormat: true,
+            defaultDate: '01/01/1900',
+            // datePicker additional options
+            // (see https://github.com/dbushell/Pikaday#configuration)
+            datePickerConfig: {
+                // First day of the week (0: Sunday, 1: Monday, etc)
+                firstDay: 0,
+                showWeekNumber: true,
+                numberOfMonths: 3,
+                disableDayFn(date) {
+                    // Disable Sunday and Saturday
+                    return date.getDay() === 0 || date.getDay() === 6;
+                }
+            }
+        },
+    ]
+}
 
 export default configurations
 
