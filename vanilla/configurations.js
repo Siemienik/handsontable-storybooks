@@ -493,6 +493,37 @@ configurations.CellTypeNumeric =  { // does not working properly in this storybo
             }
         }
     ]
+}
+configurations.CellTypeAutocomplete = {
+    licenseKey: 'non-commercial-and-evaluation',
+    data: [
+        ['BMW', 'black', 'black'],
+        ['Nissan', 'blue', 'blue'],
+        ['Chrysler', 'yellow', 'black'],
+        ['Volvo', 'white', 'gray']
+    ],
+    colHeaders: ['Car', 'Chassis color', 'Bumper color'],
+    columns: [
+        {
+            type: 'autocomplete',
+            source: ['BMW', 'Chrysler', 'Nissan', 'Suzuki', 'Toyota', 'Volvo'],
+            strict: false
+        },
+        {
+            type: 'autocomplete',
+            source:  ['yellow', 'red', 'orange and another color', 'green',
+    'blue', 'gray', 'black', 'white', 'purple', 'lime', 'olive', 'cyan'],
+            strict: false,
+            visibleRows: 4
+        },
+        {
+            type: 'autocomplete',
+            source:  ['yellow', 'red', 'orange and another color', 'green',
+    'blue', 'gray', 'black', 'white', 'purple', 'lime', 'olive', 'cyan'],
+            strict: false,
+            trimDropdown: false
+        }
+    ]
 };
 export default configurations
 
