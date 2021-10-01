@@ -638,6 +638,18 @@ configurations.CellTypeHandsontable = {
         {}
     ]
 };
+configurations.CellTypePassword = {
+    data: [
+        { password: 'plainTextPassword' },
+        { password: 'txt' },
+        { password: 'longer' }
+    ],
+    colHeaders: ['Password'],
+    licenseKey: 'non-commercial-and-evaluation',
+    columns: [
+        { data: 'password', type: 'password', hashLength: 10 }
+    ]
+};
 
 export default configurations
 
