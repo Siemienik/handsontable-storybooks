@@ -650,6 +650,17 @@ configurations.CellTypePassword = {
         { data: 'password', type: 'password', hashLength: 10 }
     ]
 };
+configurations.CellTypeTime = {
+    data: [[1332284400000], ['10 30'], ['8:00 PM'], [1332284400000], [1332284400000]],
+    licenseKey: 'non-commercial-and-evaluation',
+    columns: [
+        {
+            type: 'time',
+            timeFormat: 'h:mm:ss a',
+            correctFormat: true
+        },
+    ]
+};
 
 export default configurations
 
