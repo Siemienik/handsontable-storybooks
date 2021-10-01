@@ -590,7 +590,17 @@ configurations.CellTypeDate = {
             }
         },
     ]
-}
+};
+configurations.CellTypeDropdown = {
+    data: [['black'], ['blue'], ['black'], ['gray']],
+    columns: [
+        {
+            type: 'dropdown',
+            source: ['yellow', 'red', 'orange', 'green', 'blue', 'gray', 'black', 'white']
+        }
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+};
 
 export default configurations
 
