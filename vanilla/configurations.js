@@ -76,7 +76,7 @@ configurations.CustomRendererExample = {
     licenseKey: 'non-commercial-and-evaluation'
 };
 configurations.StandardContextMenu = {
-    data: Handsontable.helper.createSpreadsheetData(4, 4),
+    data: Handsontable.helper.createSpreadsheetData(5, 20),
     colHeaders: true,
     rowHeaders: true,
     contextMenu: true,
