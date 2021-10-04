@@ -762,6 +762,12 @@ configurations.Comments = {
     height: 'auto',
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.ColumnDropdownMenu = {
+    data: Handsontable.helper.createSpreadsheetData(5, 20),
+    colHeaders: true,
+    dropdownMenu: true,
+    licenseKey: 'non-commercial-and-evaluation'
+};
 
 export default configurations
 
