@@ -803,6 +803,11 @@ configurations.HiddenColumns =  {
         indicators: true
     }
 }
+configurations.ColumnFreeze = {
+    data: Handsontable.helper.createSpreadsheetData(100, 50),
+    fixedColumnsLeft: 2,
+    licenseKey: 'non-commercial-and-evaluation'
+};
 
 export default configurations
 
