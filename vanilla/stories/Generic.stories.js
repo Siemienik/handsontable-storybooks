@@ -52,6 +52,7 @@ export const RtlUndoRedo = mapConfigToStory(configurations.UndoRedo, {rtl: true}
 export const RtlUndoRedoContextMenu = mapConfigToStory(configurations.UndoRedoContextMenu, {rtl: true});
 export const RtlNestedHeaders = mapConfigToStory(configurations.NestedHeaders, {rtl: true});
 export const RtlCollapsibleColumns = mapConfigToStory(configurations.CollapsibleColumns, {rtl: true});
+export const RtlFilters = mapConfigToStory(configurations.Filters, {rtl: true});
 export const RtlColumnSummary = mapConfigToStory(configurations.ColumnSummary, {rtl: true});
 export const RtlCustomBorders = mapConfigToStory(configurations.CustomBorders, {rtl: true});
 
@@ -87,6 +88,7 @@ export const UndoRedo = mapConfigToStory(configurations.UndoRedo);
 export const UndoRedoContextMenu = mapConfigToStory(configurations.UndoRedoContextMenu);
 export const NestedHeaders = mapConfigToStory(configurations.NestedHeaders);
 export const CollapsibleColumns = mapConfigToStory(configurations.CollapsibleColumns);
+export const Filters = mapConfigToStory(configurations.Filters);
 export const CustomBorders = mapConfigToStory(configurations.CustomBorders);
 
 const formulas = {formulas:{engine:HyperFormula}};
@@ -122,5 +124,6 @@ export const HfUndoRedo = mapConfigToStory({...configurations.UndoRedo, ...formu
 export const HfUndoRedoContextMenu = mapConfigToStory({...configurations.UndoRedoContextMenu, ...formulas});
 export const HfNestedHeaders = mapConfigToStory({...configurations.NestedHeaders, ...formulas});
 export const HfCollapsibleColumns = mapConfigToStory({...configurations.CollapsibleColumns, ...formulas});
+export const HfFilters = mapConfigToStory({...configurations.Filters, ...formulas});
 export const HfColumnSummary = mapConfigToStory({...configurations.ColumnSummary, ...formulas});
 export const HfCustomBorders = mapConfigToStory({...configurations.CustomBorders, ...formulas});
