@@ -830,6 +830,17 @@ configurations.ColumnResizing = {
     manualColumnResize: true,
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.RowOperations =  {
+    data: Handsontable.helper.createSpreadsheetData(200, 20),
+    width: '100%',
+    height: 320,
+    rowHeaders: true,
+    colHeaders: true,
+    colWidths: 100,
+    manualRowMove: true,
+    manualRowResize: true,
+    licenseKey: 'non-commercial-and-evaluation'
+};
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
