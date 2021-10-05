@@ -57,4 +57,46 @@ ContextMenuForFont.args =  {
     },
   },
 };
+export const Searching = (({ rtl = false}) => {
+  const container = document.createElement('div');
+  const hot = new Handsontable(container, {
+    data: [
+      ['Tesla', 2017, 'black', 'black'],
+      ['Nissan', 2018, 'blue', 'blue'],
+      ['Chrysler', 2019, 'yellow', 'black'],
+      ['Volvo', 2020, 'yellow', 'gray']
+    ],
+    colHeaders: true,
+    // enable the `Search` plugin
+    search: true,
+    height: 'auto',
+    licenseKey: 'non-commercial-and-evaluation'
+  });
 
+  const search = document.createElement('input');
+  search.type = 'search';
+  search.placeholder = 'Search';
+
+  Handsontable.dom.addEvent(search, 'keyup', function(event) {
+    // get the `Search` plugin's instance
+    const search = hot.getPlugin('search');
+    // use the `Search` plugin's `query()` method
+    const queryResult = search.query(this.value);
+
+    console.log(queryResult);
+
+    hot.render();
+  });
+
+  const wrapper = document.createElement('div');
+  wrapper.append(search, container);
+
+  if(rtl){
+    wrapper.dir = 'rtl';
+  }
+
+  setTimeout(()=>hot.render());
+
+  return wrapper;
+}).bind({});
+Searching.args = {rtl:false}
