@@ -790,6 +790,19 @@ configurations.Filters = {
     height: 'auto',
     licenseKey: 'non-commercial-and-evaluation'
 }
+configurations.HiddenColumns =  {
+    licenseKey: 'non-commercial-and-evaluation',
+    data: Handsontable.helper.createSpreadsheetData(5, 12),
+    colHeaders: true,
+    rowHeaders: true,
+    height:'auto',
+    // individually add column hiding context menu items
+    contextMenu: [`hidden_columns_show`, `hidden_columns_hide`],
+    hiddenColumns: {
+        columns: [3, 5, 9],
+        indicators: true
+    }
+}
 
 export default configurations
 
