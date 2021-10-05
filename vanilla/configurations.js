@@ -808,7 +808,16 @@ configurations.ColumnFreeze = {
     fixedColumnsLeft: 2,
     licenseKey: 'non-commercial-and-evaluation'
 };
-
+configurations.ColumnMoving =  {
+    data: Handsontable.helper.createSpreadsheetData(200, 20),
+    width: '100%',
+    height: 320,
+    rowHeaders: true,
+    colHeaders: true,
+    colWidths: 100,
+    manualColumnMove: true,
+    licenseKey: 'non-commercial-and-evaluation'
+};
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;

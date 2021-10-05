@@ -57,6 +57,7 @@ export const RtlHiddenColumns = mapConfigToStory(configurations.HiddenColumns, {
 export const RtlColumnSummary = mapConfigToStory(configurations.ColumnSummary, {rtl: true});
 export const RtlCustomBorders = mapConfigToStory(configurations.CustomBorders, {rtl: true});
 export const RtlColumnFreeze = mapConfigToStory(configurations.ColumnFreeze, {rtl: true});
+export const RtlColumnMoving = mapConfigToStory(configurations.ColumnMoving, {rtl: true});
 
 export const JustATable = mapConfigToStory(configurations.JustATable);
 export const FixedRowsBottom = mapConfigToStory(configurations.FixedRowsBottom);
@@ -94,6 +95,7 @@ export const Filters = mapConfigToStory(configurations.Filters);
 export const HiddenColumns = mapConfigToStory(configurations.HiddenColumns);
 export const CustomBorders = mapConfigToStory(configurations.CustomBorders);
 export const ColumnFreeze = mapConfigToStory(configurations.ColumnFreeze);
+export const ColumnMoving = mapConfigToStory(configurations.ColumnMoving);
 
 const formulas = {formulas:{engine:HyperFormula}};
 export const HfJustATable = mapConfigToStory({...configurations.JustATable, ...formulas});
@@ -133,3 +135,4 @@ export const HfHiddenColumns = mapConfigToStory({...configurations.HiddenColumns
 export const HfColumnSummary = mapConfigToStory({...configurations.ColumnSummary, ...formulas});
 export const HfCustomBorders = mapConfigToStory({...configurations.CustomBorders, ...formulas});
 export const HfColumnFreeze = mapConfigToStory({...configurations.ColumnFreeze, ...formulas});
+export const HfColumnMoving = mapConfigToStory({...configurations.ColumnMoving, ...formulas});
