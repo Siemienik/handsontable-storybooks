@@ -808,7 +808,7 @@ configurations.ColumnFreeze = {
     fixedColumnsLeft: 2,
     licenseKey: 'non-commercial-and-evaluation'
 };
-configurations.ColumnMoving =  {
+configurations.ColumnMoving = {
     data: Handsontable.helper.createSpreadsheetData(200, 20),
     width: '100%',
     height: 320,
@@ -816,6 +816,18 @@ configurations.ColumnMoving =  {
     colHeaders: true,
     colWidths: 100,
     manualColumnMove: true,
+    licenseKey: 'non-commercial-and-evaluation'
+};
+configurations.ColumnResizing = {
+    data: Handsontable.helper.createSpreadsheetData(5, 5),
+    width: '100%',
+    height: 'auto',
+    colHeaders: true,
+    rowHeaders: true,
+    colWidths(index) {
+        return (index + 1) * 40;
+    },
+    manualColumnResize: true,
     licenseKey: 'non-commercial-and-evaluation'
 };
 export default configurations
