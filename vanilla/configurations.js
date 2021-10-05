@@ -841,6 +841,16 @@ configurations.RowOperations =  {
     manualRowResize: true,
     licenseKey: 'non-commercial-and-evaluation'
 };
+configurations.CellsMerged = {
+    data: Handsontable.helper.createSpreadsheetData(100, 50),
+    contextMenu: true,
+    mergeCells: [
+        { row: 1, col: 1, rowspan: 3, colspan: 3 },
+        { row: 3, col: 4, rowspan: 2, colspan: 2 },
+        { row: 5, col: 6, rowspan: 3, colspan: 3 }
+    ],
+    licenseKey: 'non-commercial-and-evaluation'
+}
 export default configurations
 
 //todo https://jsfiddle.net/5nobvsz0/1/ dropdown menu, filters;
