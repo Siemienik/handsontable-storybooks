@@ -16,7 +16,7 @@
     "@angular/platform-browser-dynamic": "~11.1.1",
     "@angular/router": "~11.1.1",
     "@handsontable/angular": "^8.4.0",
-    "handsontable": "^8.4.0",
+    "handsontable": "^10.0.0",
     "hyperformula": "^0.6.0",
     "numbro": "^2.1.2",
     "rxjs": "~6.6.0",
